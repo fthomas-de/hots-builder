@@ -1,4 +1,4 @@
 hots-builder
 ============
 
-Trying funny things
+having some fun
