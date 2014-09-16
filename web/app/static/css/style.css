@@ -1,4 +1,24 @@
+div.centerRow {
+	float: none;
+	margin: 0 auto;	
+}
+
+div.imgBox {
+	float: left;
+	width: 125px;
+	height: 125px;
+}
+
+div.bcolor {
+	color: #7A7A7A;
+}
+
+div.row {
+	align: center;
+}
+
 div.row img {
+	align: center;
 	margin: 10px;
 }
 

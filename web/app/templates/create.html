@@ -1,19 +1,22 @@
 {% extends 'template.html' %}
 {% block content %}
-<div>
+<div class="bcolor">
+
  <div class="page-header">
 	<h1>Step 1: Choose a Hero</h1>
  </div>
- <div id="hero_icons">
-	{% for img_set in img %} 
-	<div class="row">
-		{% for item in img_set %}	
-			<a href={{ item[:-4] }}>
-				<img src= {{ "static/img/heroes/" + item }} />
-			</a>
-		{% endfor %}
-	</div><br>
-	{% endfor %}
+
+ <div class="container">
+  <div class="row">
+   {% for lst in imgLst %}	
+    {% for item in lst %}	
+     <a href={{ item[:-4] }}>
+     <img src= "{{ url_for('static', filename='img/heroes/' + item ) }}" /> </a>
+    {% endfor %}
+    <br>
+   {% endfor %}
+  </div>
  </div>
+
 </div>
 {% endblock content %}
