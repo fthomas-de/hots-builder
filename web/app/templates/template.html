@@ -17,7 +17,7 @@
 
 </head>
 
-<link rel="shortcut icon" href="static/img/heroes_icon_small.png">
+<link rel="shortcut icon" href="static/img/icons/heroes_icon_small.png">
 
 <body>
 
@@ -31,12 +31,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/"><img src="static/img/heroes_icon_small.png">  HotS Builder</a>
+				<a class="navbar-brand" href="/"><img src="static/img/icons/heroes_icon_small.png">  HotS Builder</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				{% if page == 'index' %}	 
 				{% include "nav_index.html" %}
 				{% elif page == 'create' %}
+				{% include "nav_create.html" %}
+				{% elif page == "build" %}
 				{% include "nav_create.html" %}
 				{% endif %}
 			</div><!--/.nav-collapse -->
