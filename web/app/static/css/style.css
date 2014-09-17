@@ -5,13 +5,13 @@ img.hover {
 }
 
 img.normal {
-	diplay: none;
+	display: inline;
 	margin-left: 15px;
 	margin-right: 15px;
 }
 
 a:hover img.hover {
-	display: block;
+	display: inline;
 	margin-left: 15px;
 	margin-right: 15px;
 }
