@@ -13,6 +13,13 @@ hero_lst.append(hero_img_names[13:20])
 hero_lst.append(hero_img_names[20:26])
 hero_lst.append(hero_img_names[26:34])
 
+weekly_hero_lst = []
+
+with open('/home/fthomas/Dokumente/hots-builder/web/app/static/hero-data/weekly-heroes') as file:
+	for row in file:
+		filepath = row.strip()
+		weekly_hero_lst.append(filepath)
+
 @app.route('/')
 @app.route('/hots')
 @app.route('/hots/builder')
@@ -21,7 +28,7 @@ def index():
 
 @app.route('/create')
 def create():
-	return render_template('create.html', page='create', imgLst = hero_lst)
+	return render_template('create.html', page='create', imgLst = hero_lst, weekly_hero_lst = weekly_hero_lst)
 
 @app.route('/<name>')
 def build(name):

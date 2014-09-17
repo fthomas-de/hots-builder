@@ -10,12 +10,16 @@
 
   {% for lst in imgLst %}	
    <div class="row">
-   {% for item in lst %}	
-    <a href={{ item[:-4] }}>
+   {% for item in lst %}
+    <a href={{ item[:-10] }} >
 
-     <img class="normal" src="{{ url_for('static', filename='img/heroes/' + item ) }}" />  
-     <img class="hover"  src="{{ url_for('static', filename='img/highlights/' + item ) }}" />
-
+     {% if not item[:-10] in weekly_hero_lst %}
+     <img class="normal" src="{{ url_for('static', filename='img/heroes/' + item ) }}" />   
+     <img class="hover"  src="{{ url_for('static', filename='img/heroes_highlights/' + item ) }}" />
+     {% else %}
+     <img class="normal" src="{{ url_for('static', filename='img/rotation/' + item[:-4] + '_rotation.png' ) }}" />
+     <img class="hover"  src="{{ url_for('static', filename='img/rotation_highlights/' + item[:-4] + '_rotation.png' ) }}" />
+     {% endif %}
     </a>
    {% endfor %}
   </div>

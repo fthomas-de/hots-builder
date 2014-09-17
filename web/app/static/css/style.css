@@ -2,34 +2,34 @@ img.hover {
 	display: none;
 	margin-left: 15px;
 	margin-right: 15px;
+	width: 90px;
 }
 
 img.normal {
 	display: inline;
 	margin-left: 15px;
 	margin-right: 15px;
+	width: 90px;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 a:hover img.hover {
 	display: inline;
-	margin-left: 15px;
-	margin-right: 15px;
 }
 
 a:hover img.normal {
 	display: none;
-	margin-left: 15px;
-	margin-right: 15px;
 }
 
 div.bcolor {
-	color: #7A7A7A;
+	color: #428BCA;
 }
 
 div.row img {
 	align: center;
-	margin-left: 15px;
-	margin-right: 15px;
 }
 
 body {
