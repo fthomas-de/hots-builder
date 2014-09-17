@@ -1,3 +1,11 @@
+footer p.left {
+	float: left,
+}
+
+footer p.right {
+	float: right;
+}
+
 img.hover {
 	display: none;
 	margin-left: 15px;
