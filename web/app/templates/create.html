@@ -5,17 +5,22 @@
  <div class="page-header">
 	<h1>Step 1: Choose a Hero</h1>
  </div>
-
+ <br>
  <div class="container">
-  <div class="row">
-   {% for lst in imgLst %}	
-    {% for item in lst %}	
-     <a href={{ item[:-4] }}>
-     <img src= "{{ url_for('static', filename='img/heroes/' + item ) }}" /> </a>
-    {% endfor %}
-    <br>
+
+  {% for lst in imgLst %}	
+   <div class="row">
+   {% for item in lst %}	
+    <a href={{ item[:-4] }}>
+
+     <img class="normal" src="{{ url_for('static', filename='img/heroes/' + item ) }}" />  
+     <img class="hover"  src="{{ url_for('static', filename='img/highlights/' + item ) }}" />
+
+    </a>
    {% endfor %}
   </div>
+  {% endfor %}
+
  </div>
 
 </div>

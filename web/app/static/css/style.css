@@ -1,25 +1,35 @@
-div.centerRow {
-	float: none;
-	margin: 0 auto;	
+img.hover {
+	display: none;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
-div.imgBox {
-	float: left;
-	width: 125px;
-	height: 125px;
+img.normal {
+	diplay: none;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+a:hover img.hover {
+	display: block;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+a:hover img.normal {
+	display: none;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 div.bcolor {
 	color: #7A7A7A;
 }
 
-div.row {
-	align: center;
-}
-
 div.row img {
 	align: center;
-	margin: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 body {
@@ -30,12 +40,4 @@ body {
   	padding: 40px 15px;
   	text-align: center;
 }
-
-.flaskimg { 
-  	position: fixed; 
-	bottom: 0; 
-	right: 0; 
-	margin-right: 10px; 
-	margin-bottom: 9px;
-} 
 

@@ -4,9 +4,9 @@ from os import walk
 
 path = '/home/fthomas/Dokumente/hots-builder/web/app/static/img/heroes'
 (_, _, hero_img_names) = walk(path).next()
+hero_img_names.sort()
 
 hero_lst = []
-
 hero_lst.append(hero_img_names[:7])
 hero_lst.append(hero_img_names[7:13])
 hero_lst.append(hero_img_names[13:20])
