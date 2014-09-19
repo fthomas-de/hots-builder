@@ -3,11 +3,45 @@
 <div class="bcolor">
 
  <div class="page-header">
-	<h1>Step 2: Choose your Abilities</h1>
+	<h1>
+	<img  src="{{ url_for('static', filename='img/heroes/' + name + '_frame.png') }}" width="60px" /> 
+	Step 2: Choose your abilities
+	</h1>
  </div>
 
- <div class="abilities">
-	TODO: {{ name + "'s Abilities ..." }}
+ <ul class="pager">
+  {% if not lvl == 1 %}
+  <li class="previous"><a href="{{ '/' + name }}">&larr; Restart</a></li>
+  {% else %}
+  <li class="previous disabled"><a href="{{ '/' + name }}">&larr; Restart</a></li>
+  {% endif %}
+ </ul>
+
+ <div class="container">
+	{% for abilities in lst %}
+	<div class="row">
+	
+	<div class="col-sm-3">
+	</div>
+
+	{% for ability in abilities %}
+
+		<div class="col-sm-3">
+    		 <div class="thumbnail">
+      		  <!-- <img data-src="holder.js/300x300" alt="..."> -->
+		  <span class="label label-warning">Level {{ lvl }}</span>		  
+      		  <div class="caption">
+        	   <h4>{{ ability.name }}</h4>
+        	   <p>{{ ability.text }}</p>
+        	   <p><a href={{ '/' + name + '_' + next_lvl|string + '_' + hist + '-' + ability.id|string }} class="btn btn-primary" role="button">Skill</a></p>
+      	     	  </div>
+    		 </div>
+  		</div>
+
+	{% endfor %}
+	</div>
+	{% endfor %}
+
  </div>
 
 </div>

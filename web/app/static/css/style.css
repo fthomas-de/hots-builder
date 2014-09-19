@@ -1,9 +1,11 @@
-footer p.left {
-	float: left,
+.navbar {
+	background:rgba(255,255,255,1);   /* for latest browsers */
 }
 
-footer p.right {
-	float: right;
+.navbar li { color: #000 } 
+
+.thumbnail .caption {
+	color: #428BCA;
 }
 
 img.hover {
