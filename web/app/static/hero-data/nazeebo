@@ -1,1 +1,30 @@
+
 specialist
+Blood Ritual (Trait);;1;Increases Health and Mana granted by Voodoo Ritual by 100%.
+Death Ritual (Trait);;1;Permanently gain 4 Health and 2 Mana when a unit dies under Voodoo Ritual.
+Demolitionist;;1;Basic Attacks against Structures destroy 1 ammo and deal an additional 10% damage.
+Bribe;;1;Kill enemy Minions to gain stacks of Bribe. Use 20 stacks to bribe target Mercenary, instantly defeating them. Does not work on Golems.
+Spider Cluster;;4;Corpse Spiders creates 3 more spiders over 3 seconds.
+Gathering Power;;4;Passively grants 8% Ability Power. Each Hero takedown grants a bonus 2% Ability Power, up to 12%. This bonus Ability Power is lost upon death.
+Envenom;;4;Activate to poison an enemy Hero, dealing 210 damage over 6 seconds. 60s cooldown.
+Promote;;4;Activate to give target allied lane Minion +300% permanent Health and +100% permanent damage. Has 2 charges. 60s cooldown.
+Gidbinn;;7;Increases the explosion area of Plague Toads and the duration of your other non-Heroic abilities, including Voodoo Ritual, by 25%.
+Fresh Corpses;;7;Zombies deal 50% more damage.
+Mercenary Lord;;7;Mercenary camps you capture gain the following bonuses: Siege Giants: 50% increased damage, Knights: 50% increased Health
+Calldown: MULE;;7;Activate to calldown a Mule that repairs Structures, one at a time, near target point for 60 seconds, healing for 100 Health every 1 second. Grants 1 ammo every 5 seconds. 60s cooldown.
+Clairvoyance;;7;Activate to reveal the target area. Enemies in the area are revealed for 4 seconds. 45s cooldown.
+Gargantuan;;10;Summon a Gargantuan that deals 30 damage when created. The Gargantuan can grab enemy minions, and will stomp nearby enemies, slowing their Movement Speed by 30%. Lasts for 20 seconds. 60s cooldown.
+Ravenous Spirit;;10;Summons a Ravenous Spirit for 8 seconds. Deals 50 damage per second. Nazeebo cannot move while channeling. Channeled ability. 90s cooldown.
+Dead Rush;;13;Upon expiring, up to 5 remaining Zombies uproot and attack nearby enemies for 3 seconds.
+Toads of Hugeness;;13;Toad damage is increased by 10% each time they hop.
+Sprint;;13;Activate to gain 75% Movement Speed for 3 seconds. 60s cooldown.
+Ice Block;;13;Activate to place yourself in stasis and gain invulnerability for 3 seconds. 80s cooldown.
+Rewind;;13;Activate to reduce the cooldown of your Basic Abilities by 10 seconds. 60s cooldown.
+Specialized Toxin (Trait);;16;Increases the damage dealt to Heroes from Voodoo Ritual by 200%.
+Leaping Spiders;;16;Corpse Spiders leap at their targets and deal 25% more damage.
+Infested Toads;;16;Toads explode into Corpse Spiders upon death.
+Stoneskin;;16;Activate to gain 30% of your Max Health as Shields for 5 seconds. 60s cooldown.
+Swift Storm;;20;You are no longer dismounted from taking damage. Increases mount speed by 20%.
+Bolt of the Storm;;20;Activate to teleport to a nearby location. 40s cooldown.
+Humongoid;;20;Gargantuan lasts until killed instead of timing out, and deals 100% more damage against non-Heroic targets.
+Annihilating Spirit;;20;Increases the range of Ravenous Spirit by 50% and Movement Speed by 30%.

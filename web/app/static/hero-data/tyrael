@@ -1,1 +1,29 @@
 warrior
+Protection in Death (Trait);;1;When Archangel's Wrath explodes, shield nearby allies 50% of their max Health for 5 seconds.
+Horadric Reforging;;1;Increases the damage dealt by El'Druin's Might by 30%.
+Purge Evil;;1;Smite deals 30% more damage to Heroes.
+Regeneration Master;;1;Every 3 Regeneration Globes gathered grants an extra +4 Health per second, permanently.
+Amplified Healing;;4;Increases regeneration effects and all healing received by 30%.
+Vampiric Assault;;4;Basic Attacks heal for 15% of the damage dealt.
+Angelic Absorption;;4;Enemies that attack you while shielded grant 30 Health over 3 seconds.
+Retribution;;4;Cooldown is lowered by 0.5 seconds for each target hit by Smite.
+Even In Death (Trait);;4;Non-Heroic abilities can be used before exploding, but deal no damage.
+Battle Momentum;;7;Basic Attacks reduce Ability cooldowns by 0.5 seconds.
+Angel's Grace;;7;After teleporting using El'Druin's Might, gain 25% Movement Speed for 3 seconds.
+Reciprocate;;7;When your shield expires, it explodes for 90 damage to nearby enemies.
+Zealotry;;7;Increases shield duration by 100%
+Searing Attacks;;7;Activate to increase Basic Attack damage by 50% for 5 seconds. Each attack costs 15 Mana. 25s cooldown.
+Judgment;;10;Charges target, dealing 125 damage and stunning them for 1.5 seconds. While charging, nearby enemies are knocked back and take 50 damage. 80s cooldown.
+Sanctification;;10;While channeling, make all nearby allied Heroes, excluding you, invulnerable. Lasts 3 seconds. 50s cooldown.
+Burning Rage;;13;Deal 10 damage per second to nearby enemies.
+Burning Rage;;13;Enemies that attack you while shielded have their Attack Speed slowed by 50% and Movement Speed slowed by 50% for 2 seconds.
+Cast Aside;;13;Smite pushes enemies outside the target area.
+Angelic Might;;13;Gain 25% increased damage on your next Basic Attack for each target hit by Smite.
+Blade of Justice;;16;After teleporting using El'Druin's Might, your next 3 Basic Attacks within 5 seconds deal 75% more damage.
+Holy Ground;;16;Create a ring that blocks enemies from entering the area teleported to using El'Druin's Might
+Salvation;;16;Shield is 25% stronger for each allied Hero that gets shielded.
+Blood for Blood;;16;Activate to steal 15% of target enemy's Max Health and slow its Movement Speed by 30% for 3 seconds.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Fury of the Storm;;20;Basic Attacks bounce twice to nearby enemies for 50% damage.
+Angel of Justice;;20;Increases the cast range of Judgment by 50%, and reduces the cooldown by 30 seconds.
+Holy Arena;;20;Increases duration of Sanctification by 1 second and increases the damage of allies by 25%.

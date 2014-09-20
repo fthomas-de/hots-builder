@@ -1,1 +1,28 @@
 warrior
+War Paint;;1;Basic Attacks heal you for 25% of the damage dealt.
+Block;;1;Periodically reduces the damage received from Hero Basic Attacks by 50%. Stores up to 2 charges.
+Endless Fury (Trait);;1;Increases maximum Fury to 150.
+Shot of Fury (Trait);;1;Activate to gain 25 Fury.
+Superiority;;4;Reduce damage taken from non-Heroic enemies by 50%.
+Focused Attack;;4;Every 10 seconds, your next Basic Attack deals 50% additional damage. Basic Attacks reduce this cooldown by 1 second.
+Boon Of The Ancients;;4;Hitting an enemy reduces Ancient Spear's cooldown by 5 seconds.
+Furious Blow;;4;Seismic Slam damage increased by 50% and Fury cost increased to 20.
+Poisoned Spear;;7;Ancient Spear deals an additional 50% damage over 4 seconds.
+Shattered Ground;;7;Increases Seismic Slam splash damage to 100% of primary target damage.
+Ferocious Healing;;7;Activate to heal 10.15% of your Max Health. 10s cooldown.
+Leap;;10;Leap into the air, dealing 50 damage to nearby enemies, stunning them for 1.5 seconds. 50s cooldown.
+Wrath of the Berserker;;10;Gain +30% Bonus Damage to all Basic Attacks and Abilities. Disables against you have 50% reduced duration. Lasts 10 seconds, and extends by 1 second for every 4 Fury gained while active. 30s cooldown.
+Composite Spear;;13;Increases the range of Ancient Spear by 30%.
+Wind Shear;;13;Using Whirlwind removes all movement impairing effects and increases the amount healed to 40%.
+Dust Devils;;13;Whirlwind creates Tornadoes that do an additional 25% damage.
+Aftershock;;13;Using Seismic Slam temporarily reduces its Fury cost to 50%.
+Spell Shield;;13;Upon taking Ability Damage, reduce all Ability Damage taken by 50% for 2 seconds. Can only trigger once every 30 seconds.
+No Escape (Trait);;16;Increase the Movement Speed bonus from using abilities to 20%.
+Enduring Whirlwind;;16;Whirlwind duration increased by 50%.
+Mystical Spear;;16;Ancient Spear pulls even if it misses a unit, but gain no Fury.
+Imposing Presence;;16;Enemies that attack you have their Attack Speed slowed by 30%.
+Stoneskin;;16;Activate to gain 30% of your Max Health as Shields for 5 seconds.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Fury of the Storm;;20;Basic Attacks bounce twice to nearby enemies for 50% damage.
+Arreat Crater;;20;Leaves behind an impassable crater for 4 seconds.
+Anger Management;;20;Wrath of the Berserker duration increased by 1 second for every 2 Fury gained. Increases the reduction of disables to 75%.

@@ -1,10 +1,30 @@
 support
-skillA;;1;Lorem Ipsum
-skillAA;;1;Lorem
-skilA;;1;Ipsum
-skillB;;4;Lorem Ipsum
-skillC;;7;Lorem Ipsum
-skillD;;10;Lorem Ipsum
-skillE;;13;Lorem Ipsum
-skillF;;16;Lorem Ipsum
-skillG;;20;Lorem Ipsum
+Conjurer's Pursuit;;1;Every 3 Regeneration Globes gathered grants an extra +0.25 Mana per second, permanently.
+Mass Vortex;;1;Blinding Wind hits up to 5 enemies.
+Gale Force;;1;Damage dealt by Blinding Wind increased by 25%.
+Bribe;;1;Kill enemy Minions to gain stacks of Bribe. Use 20 stacks to bribe target Mercenary, instantly defeating them. Does not work on Golems.
+Lingering Blind;;4;Increases the number of Basic Attacks missed to 2.
+Protective Shield;;4;Activate to shield an allied Hero from 300 damage for 5 seconds. 60s cooldown.
+Envenom;;4;Activate to poison an enemy Hero, dealing 210 damage over 6 seconds. 60s cooldown.
+Healing Ward;;4;Activate to place a ward on the ground that heals allies in an area for 3.12% of their max Health every second for 10 seconds. 60s cooldown.
+The Good Stuff;;7;Health restored from Healing Brew increased by 25%.
+Bringer of Gifts;;7;Cloud Serpent also heals the target for 100 Health and 20 Mana.
+Calldown: MULE;;7;Activate to calldown a Mule that repairs Structures, one at a time, near target point for 60 seconds, healing for 100 Health every 1 second. Grants 1 ammo every 5 seconds. 60s cooldown.
+Clairvoyance;;7;Activate to reveal the target area. Enemies in the area are revealed for 4 seconds. 45s cooldown.
+Jug of 1,000 Cups;;10;Rapidly tosses brew to the most injured nearby allies, prioritizing Heroes over Minions, restoring a total of 600 Health and 120 Mana over 6 seconds. Restores no Mana when targeting you. 70s cooldown.
+Water Dragon;;10;Li Li summons a Water Dragon that deals 260 damage to the nearest enemy Hero and half to nearby enemies. They are also slowed by 0(-40)% for 3 seconds. 45s cooldown.
+Lightning Serpent;;13;Serpent's Attacks bounce to 3 nearby enemy targets, dealing 5 damage each.
+Hindering Winds;;13;Also slows targets by 25% for 2 seconds.
+Elusive Feet (Trait);;13;Upon taking damage, gain 2 charges of Block (50% reduced Basic Attack damage) for 10 seconds. This effect has a 10 second cooldown.
+Shrink Ray;;13;Activate to reduce an enemy Hero's damage by 50% and Movement Speed by 50% for 4 seconds. 60s cooldown.
+Ice Block;;13;Activate to place yourself in stasis and gain invulnerability for 3 seconds. 80s cooldown.
+Two For One;;16;Healing Brew throws a drink to the 2 lowest Health allies, but increases the Mana cost by 15.
+Herbal Cleanse;;16;Removes all Disabling effects and increases the Movement Speed of the target by 20% for 2 seconds.
+Magical Essence;;16;Increases the range of Healing Brew, Cloud Serpent, and Blinding Wind by 25% .
+Timeless Creature;;16;Duration of Cloud Serpent increased by 50%.
+Stoneskin;;16;Activate to gain 30% of your Max Health as Shields for 5 seconds. 60s cooldown.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Storm Shield;;20;Activate to give all nearby allied Heroes a Shield for 20% of their max Health for 3 seconds. 45s cooldown.
+Jug of 1,000,000 Cups;;20;Jug of 1,000 Cups throws out twice as many cups over the same duration.
+Double Dragon;;20;After hitting a target with Water Dragon, another dragon is summoned at the point of impact.
+Bolt of the Storm;;20;Activate to teleport to a nearby location. 40s cooldown.

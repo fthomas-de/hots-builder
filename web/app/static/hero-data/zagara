@@ -1,1 +1,30 @@
 specialist
+Centrifugal Hooks;;1;Banelings can travel twice as far before exploding.
+Corpse Feeders;;1;Kills earned by Roachlings increase their duration by 10 seconds.
+Reconstitution (Trait);;1;Health Regeneration bonus on Creep increased to 300%.
+Demolitionist;;1;Basic Attacks against Structures destroy 1 ammo and deal an additional 10% damage.
+Envenomed Spines;;4;Basic Attacks have their range increased by 20% and deal an additional 15 damage over 3 seconds.
+Medusa Blades;;4;Basic Attacks deal 25% damage to three nearby targets.
+Tumor Clutch (Trait);;4;Creep Tumor mana cost removed. Cooldown decreased to 10 seconds.
+Envenom;;4;Activate to poison an enemy Hero, dealing 210 damage over 6 seconds. 60s cooldown.
+Infest;;4;Increases an allied lane Minion's damage by 400%. Holds up to 2 charges. 30s cooldown.
+Battle Momentum;;7;Basic Attacks reduce Ability cooldowns by 0.5 seconds.
+Volatile Acid;;7;Baneling damage against non-Heroic targets increased by 50%.
+Ventral Sacs;;7;Infested Drop now spawns 3 Roachlings.
+Endless Creep (Trait);;7;Creep Tumors spread Creep twice as fast and 25% farther.
+Rapid Incubation;;7;Channel to regenerate up to 25% of your Health and Mana over 3 seconds. 45s cooldown.
+Devouring Maw;;10;Summons a Devouring Maw that deals 75 damage and devours enemies for 4 seconds. Devoured enemies cannot fight and take 38 damage per second. 100s cooldown.
+Nydus Network;;10;Summon a Nydus Worm at target location that you can enter by right-clicking. While inside, you exit by targeting a Nydus Worm with R or right-clicking near the Worm. Maximum 4 Nydus Worms. 60s cooldown.
+Mutalisk;;13;Your Hunter Killer now spawns a Mutalisk with a bounce attack and 50% increased duration.
+Grooved Spines;;13;Hunter Killer has its range increased by 35% and damage increased by 20%.
+Bile Drop;;13;Enemies hit by the Drop Pod take an additional 100% of that damage over 4 seconds.
+Giant Killer;;13;Basic Attacks against enemy Heroes deal bonus damage equal to 1.5% of the Hero's max Health.
+Spell Shield;;13;Upon taking Ability Damage, reduce all Ability Damage taken by 50% for 2 seconds. Can only trigger once every 30 seconds.
+Baneling Massacre;;16;Now spawns 8 Banelings.
+Brood Expansion;;16;Can hold up to 2 charges of Hunter Killer.
+Metabolic Boost (Trait);;16;Movement Speed boost on Creep increased to 40%.
+Stoneskin;;16;Activate to gain 30% of your Max Health as Shields for 5 seconds.
+Fury of the Storm;;20;Basic Attacks bounce twice to nearby enemies for 50% damage.
+Bolt of the Storm;;20;Activate to teleport to a nearby location. 40s cooldown.
+Tyrant Maw;;20;Devouring Maw deals 50% more damage and Heroes killed while in the Maw reduce its cooldown by 50 seconds.
+Broodling Nest;;20;Exiting a Nydus Worm spawns 6 broodlings to attack up the nearest lane. This effect has a 20 second cooldown.
