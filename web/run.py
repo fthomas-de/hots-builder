@@ -1,3 +1,3 @@
-#!flask/bin/python
+#!/home/fthomas/Dokumente/hots-builder/web/flask/bin/python
 from app import app
-app.run(port=5001, debug = True, host='0.0.0.0')
+app.run(port=5001, host='192.168.0.111')
