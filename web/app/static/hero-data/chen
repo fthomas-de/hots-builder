@@ -1,8 +1,6 @@
 warrior
 Deadly Strike;;1;Increase the damage of Flying Kick by 50%.
-Full Keg;;1;Full Keg 
-
-Increase the duration enemies are slowed by Keg Smash by 1.5 seconds.
+Full Keg;;1;Increase the duration enemies are slowed by Keg Smash by 1.5 seconds.
 Consuming Flame;;1;Breath of Fire's burn effect when used on Brew-soaked targets is increased by 2 seconds.
 Regeneration Master;;1;Every 3 Regeneration Globes gathered grants an extra +4 Health per second, permanently.
 Bottomless Mug (Trait);;4;Increase maximum Brew by 50.
@@ -25,8 +23,7 @@ Combination Attack;;16;The next Basic Attack after using Flying Kick deals 200% 
 Keg Toss;;16;Increase Keg Smash range by 200%.
 Combustion;;16;Breath of Fire deals 60 bonus damage immediately to Brew-soaked enemies instead of lighting them on fire.
 Combat Stance (Trait);;16;Shields from Fortifying Brew last for an additional 2 seconds after drinking stops.
-Resurgence of the Storm
-Bolt of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
-Cooldown: 40 seconds;;20;Activate to teleport to a nearby location. 40s cooldown.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Bolt of the Storm;;20;Activate to teleport to a nearby location. 40s cooldown.
 Untapped Potential;;20;Increases duration by 2 seconds. Additionally, gain an extra 5% Movement Speed whenever an enemy is hit, up to 100%.
 Elemental Conduit;;20;Using an ability will cause one of the elemental spirits to fight with you for 5 seconds. 9 second cooldown.
