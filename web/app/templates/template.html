@@ -70,6 +70,37 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
+    {% if page == 'build' or page == 'overview' %}
+
+
+	<script type="text/javascript">
+
+	function equalHeight(group) {    
+    		var tallest = 0;    
+
+    		group.each(function() {       
+        		var thisHeight = $(this).height();       
+        		if(thisHeight > tallest) {          
+            			tallest = thisHeight;       
+        		}    
+    		});    
+		$(".thumbnail").each(function() { $(this).height(tallest)  });
+    		//group.each(function() { $(this).height(tallest); });
+        } 
+
+	$(document).ready(function() { 
+		equalHeight($(".inner")); 
+
+		
+		$(window).resize(function(){
+			equalHeight($(".inner"));
+		});
+
+	});
+
+	</script>
+    {% endif %}
+
 </body>
 </html>
 

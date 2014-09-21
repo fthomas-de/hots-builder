@@ -20,29 +20,46 @@
  <div class="container">
 	{% for abilities in lst %}
 	<div class="row">
-	
-	<div class="col-sm-3">
+
+	<div class="col-sm-2">
+	<!-- ignore me-->
 	</div>
 
 	{% for ability in abilities %}
 
-		<div class="col-sm-3">
+		<div class="col-sm-4">
     		 <div class="thumbnail">
-      		  <!-- <img data-src="holder.js/300x300" alt="..."> -->
+		 <div class="inner">
+
+      		  <!--<img data-src="holder.js/300x300" alt="...">--> 
+
 		  <span class="label label-warning">Level {{ lvl }}</span>		  
+		  			
+		  <a href="{{ '/' + name + '_' + next_lvl|string + '_' + hist + '-' + ability.id|string }}">
+                   <span class="label label-success">+</span>
+                  <a/>
+
       		  <div class="caption">
         	   <h4>{{ ability.name }}</h4>
         	   <p>{{ ability.text }}</p>
+		    
+		   <!---
         	   <p><a href={{ '/' + name + '_' + next_lvl|string + '_' + hist + '-' + ability.id|string }} class="btn btn-primary" role="button">Skill</a></p>
-      	     	  </div>
+		   -->
+
+		  </div><!-- inner -->
+      	     	  </div><!-- thumbnail -->
     		 </div>
   		</div>
 
 	{% endfor %}
+	<div class="col-sm-2">
 	</div>
+	</div> <!-- row -->
+
 	{% endfor %}
+ </div> <!-- container -->
 
- </div>
+</div> <!-- bcolor -->
 
-</div>
 {% endblock content %}
