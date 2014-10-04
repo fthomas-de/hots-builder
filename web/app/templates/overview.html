@@ -9,12 +9,14 @@
 	</h1>
  </div>
 
+
   <ul class="pager">
   <li class="previous"><a href="{{ '/' + name }}">&larr; Restart</a></li>
+  <li class="next"><a href="{{ '/submit/' + name + '_' + s }}">Submit</a></li>
   </ul>
 
  <div class="container">
- 
+
 	{% for abilities in lst %}
 	<div class="row">
 		
@@ -25,12 +27,14 @@
 
    	 <div class="col-sm-4">
 	  <div class="thumbnail">
+	  <div class="inner">
 	   <span class="label label-warning">Level {{ ability.lvl }}</span>
 	   <!-- <img data-src="holder.js/300x300" alt="..."> -->
 	   <div class="caption">
 	    <h4>{{ ability.name }}</h4>
 	    <p>{{ ability.text }}</p>
            </div>
+	   </div>
 	  </div>
 	 </div>
 
@@ -42,7 +46,6 @@
 	</div> <!-- row -->
 	{% endfor %}
 
- </div>
- 
+ </div> <!--container-->
 </div>
 {% endblock content %}

@@ -63,3 +63,6 @@ def update_ability(name, text, lvl, hero_id):
 		print 'Updating:', name, lvl, hero_id
 		ability.text = text
 		db.session.commit()
+def insert_build(build):
+	print "wtf"
+	pass

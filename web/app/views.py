@@ -47,6 +47,13 @@ def create():
 	return render_template('create.html', page='create', imgLst = hero_lst, weekly_hero_lst = weekly_hero_lst)
 
 
+@app.route('/submit/<var>')
+def submit(var):
+	#from dbupdate import insert_build
+	#insert_build(var)
+	print var
+	return redirect('/', code=302)
+
 @app.route('/<name>')
 def build(name):
 	try:
@@ -66,11 +73,13 @@ def build(name):
 		#get all skilled abilities
 		hist = hist.split('-')[1:]
 		lst = []
+		s = ''
 		for id in hist:
 			ability = models.Ability.query.filter_by(id=id).first()
 			lst.append(ability)
+			s += str(ability.id) + '_'	
 		lst = chunks(lst)
-                return render_template('overview.html', page='overview', name=name, lst=lst)
+                return render_template('overview.html', page='overview', name=name, lst=lst, s=s)
 	
  	#case 2: not rdy yet
 	abilities = get_hero_abilities(name, lvl)
