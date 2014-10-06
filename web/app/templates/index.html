@@ -2,11 +2,35 @@
 {% block content %}
 <div class="bcolor">
  <div class="page-header">
-	<h1>Recent Builds</h1>
+	{% if mode == 0 %}
+		<h1>Recent Builds</h1>
+	{% elif mode == 1 %}
+		<h1>Best Builds</h1>
+	{% endif %}
  </div>
  <div>
-	<h3>There are currently no builds available</h3>
-	<p>Click <a href="/create"><u>here</u></a> to create one</p>
+	{% if builds == None %}
+		<h3>There are currently no builds available</h3>
+		<p>Click <a href="/create"><u>here</u></a> to create one</p>
+	{% else %}
+		{% for build in builds %}
+			<ul class="pager">
+				{% if mode == 0 %}
+					<li class="previous"><a href="/upvote_latest/{{ build.name }}">+1</a></li>
+				{% elif mode == 1 %}
+					<li class="previous"><a href="{{ '/' + build.build }}">+1</a></li>
+				{% endif %}
+				<li class="next"><a href="{{ '/' + build.build + 'a' }}">View</a></li>
+  			</ul>
+			{{ build.name }} <br>
+			{{ build.text }} <br>
+			{{ build.hero }} <br>
+			{{ build.build }} <br>
+			{{ build.pos_votes }} <br>
+			{{ build.date }} <br>
+			<hr>
+		{% endfor %}
+	{% endif %}
  </div>
 </div>
 {% endblock content %}

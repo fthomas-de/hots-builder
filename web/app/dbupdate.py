@@ -43,6 +43,36 @@ def update():
 					insert_ability(ability, text, lvl, hero_id)
 
 
+def insert_build(name, text, hero, build, votes=0, pos_votes=0):
+	from time import time
+	date = int(time())
+
+	build = models.Build(name=name, text=text, hero=hero, votes=votes, pos_votes=pos_votes, build=build, date=date)
+
+	from sqlalchemy.exc import IntegrityError
+	try:
+		db.session.add(build)
+		db.session.commit()
+	except IntegrityError:
+		print 'IntegrityError: Duplicate name'	
+
+def get_best_builds(count):
+	builds = models.Build.query.order_by(models.Build.pos_votes.desc()).limit(count)
+	builds = builds.all()
+	print 'best_builds:', builds	
+	return builds
+
+def get_latest_builds(count):
+	builds = models.Build.query.order_by(models.Build.date.desc()).limit(count)
+	builds = builds.all()
+	print 'latest_builds:', builds
+	return builds
+
+def upvote(name):
+	build = models.Build.query.filter_by(name=name).first()
+	build.pos_votes = build.pos_votes + 1
+	db.session.commit()
+
 def insert_hero(name, role):
 	hero = models.Hero(name=name, role=role)
 	db.session.add(hero)
@@ -63,6 +93,3 @@ def update_ability(name, text, lvl, hero_id):
 		print 'Updating:', name, lvl, hero_id
 		ability.text = text
 		db.session.commit()
-def insert_build(build):
-	print "wtf"
-	pass

@@ -36,11 +36,38 @@ def chunks(lst):
 	for i in xrange(0, len(lst), 2):
 		yield(lst[i:i+2])
 
+#routing
 @app.route('/')
 @app.route('/hots')
 @app.route('/hots/builder')
 def index():
-	return render_template('index.html', page='index')
+	from dbupdate import get_latest_builds
+	builds = get_latest_builds(5)
+	print builds
+	if len(builds) == 0:
+		builds = None
+	return render_template('index.html', page='index', builds=builds, mode=0)
+
+@app.route('/upvote_best/<name>')
+def upvote_best(name):
+	from dbupdate import upvote
+	upvote(name)
+	return redirect('/best', code=302)
+
+@app.route('/upvote_latest/<name>')
+def upvote_latest(name):
+	from dbupdate import upvote
+	upvote(name)
+	return redirect('/', code=302)
+
+@app.route('/best')
+def best():
+	from dbupdate import get_best_builds
+	builds = get_best_builds(5)
+	print builds
+	if len(builds) == 0:
+		builds = None
+	return render_template('index.html', page='index', builds=builds, mode=1)
 
 @app.route('/create')
 def create():
@@ -49,13 +76,16 @@ def create():
 
 @app.route('/submit/<var>')
 def submit(var):
-	#from dbupdate import insert_build
-	#insert_build(var)
-	print var
+	from dbupdate import insert_build
+	(name, text, build) = var.split(':')
+	(hero, _, _) = build.split('_')
+	insert_build(name=name, text=text, hero=hero, build=build)
+	print name, text, hero, build
 	return redirect('/', code=302)
 
 @app.route('/<name>')
 def build(name):
+	build = name
 	try:
 		name, lvl, hist = name.split('_')
 		lvl = int(lvl)
@@ -68,8 +98,13 @@ def build(name):
 	if not name + '_frame.png' in hero_img_names: abort(401)
 	
 	#case 1: rdy now
+	mode = 2
         if lvl == 0:
 		from app import db, models
+		if hist[-1] == 'a':
+			hist == hist[:-1]
+			mode = 3
+	
 		#get all skilled abilities
 		hist = hist.split('-')[1:]
 		lst = []
@@ -79,7 +114,7 @@ def build(name):
 			lst.append(ability)
 			s += str(ability.id) + '_'	
 		lst = chunks(lst)
-                return render_template('overview.html', page='overview', name=name, lst=lst, s=s)
+                return render_template('overview.html', page='overview', name=name, lst=lst, s=s, build=build, mode=mode)
 	
  	#case 2: not rdy yet
 	abilities = get_hero_abilities(name, lvl)

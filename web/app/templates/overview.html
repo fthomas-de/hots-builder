@@ -12,10 +12,28 @@
 
   <ul class="pager">
   <li class="previous"><a href="{{ '/' + name }}">&larr; Restart</a></li>
-  <li class="next"><a href="{{ '/submit/' + name + '_' + s }}">Submit</a></li>
   </ul>
 
  <div class="container">
+
+ {% if mode == 2 %}
+
+ <div class="row">
+ <div class="col-sm-2">
+  </div>
+
+   <div class="col-sm-8">
+    <div class="input-group">
+     <span class="input-group-addon">Buildname:</span>
+     <input type="text" class="form-control">
+      <span class="input-group-btn">
+       <button class="btn btn-default" type="button"><a href="{{ '/submit/' + 'name:text:' + build }}">Submit</a></button>
+      </span>
+    </div><!-- /input-group -->
+   </div><!-- /.col-sm-4 -->
+  </div>
+  <br> 
+ {% endif %}
 
 	{% for abilities in lst %}
 	<div class="row">

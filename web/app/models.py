@@ -21,3 +21,17 @@ class Ability(db.Model):
 	
 	def __repr__(self):
 		return '<Skill %s>' % (self.name)
+
+class Build(db.Model):
+	__tablename__ = 'builds'
+	id = db.Column(db.Integer, primary_key = True)
+	name = db.Column(db.String(50), unique = True)
+	text = db.Column(db.String(200))
+	hero = db.Column(db.String(50))
+	votes = db.Column(db.Integer)
+	pos_votes = db.Column(db.Integer)
+	build = db.Column(db.String(75))
+	date = db.Column(db.Integer)
+
+	def __repr__(self):
+		return '<Build %s>' % (self.name)
