@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, abort
+from flask import Flask, render_template, url_for, request, redirect, abort, jsonify
 from app import app
 from os import walk
 from models import db
@@ -36,6 +36,14 @@ def chunks(lst):
 	for i in xrange(0, len(lst), 2):
 		yield(lst[i:i+2])
 
+def id():
+	u_agent = request.headers.get('User-Agent')
+	ip = jsonify({'ip': request.remote_addr}), 200
+	ip2 = request.environ['REMOTE_ADDR']	
+	ip3 = request.remote_addr
+	print 'agent', u_agent
+	print 'IP', ip3
+
 #routing
 @app.route('/')
 @app.route('/hots')
@@ -52,12 +60,14 @@ def index():
 def upvote_best(name):
 	from dbupdate import upvote
 	upvote(name)
+	id()
 	return redirect('/best', code=302)
 
 @app.route('/upvote_latest/<name>')
 def upvote_latest(name):
 	from dbupdate import upvote
 	upvote(name)
+	id()
 	return redirect('/', code=302)
 
 @app.route('/best')
