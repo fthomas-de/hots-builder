@@ -14,4 +14,4 @@ db.init_app(app)
 db.create_all()
 
 from dbupdate import update
-#update()
+update()

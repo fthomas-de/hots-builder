@@ -114,7 +114,9 @@ def build(name):
 			lst.append(ability)
 			s += str(ability.id) + '_'	
 		lst = chunks(lst)
-                return render_template('overview.html', page='overview', name=name, lst=lst, s=s, build=build, mode=mode)
+		from .forms import Build
+		form = Build()
+                return render_template('overview.html', page='overview', name=name, lst=lst, s=s, build=build, mode=mode, form=form)
 	
  	#case 2: not rdy yet
 	abilities = get_hero_abilities(name, lvl)
