@@ -21,9 +21,10 @@
  {% endif %}
  </ul>
 
- <div class="container">
+ {% block build_name %}
+ {% endblock %}
 
- {% block build %}{% endblock %}
+ <div class="container">
 
  {% if mode == 2 %}
 
