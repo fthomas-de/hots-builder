@@ -21,9 +21,6 @@
  {% endif %}
  </ul>
 
- {% block build_name %}
- {% endblock %}
-
  <div class="container">
 
  {% if mode == 2 %}
@@ -33,16 +30,22 @@
   </div>
 
    <div class="col-sm-8">
-    <div class="input-group">
+    <form class="form" method="post" action="/submit" role="form"> 
+    <div class="input-group" >
      <span class="input-group-addon">Buildname:</span>
-     <input type="text" class="form-control">
+     
+     {{ form.build_name(class="form-control") }}      
+     
       <span class="input-group-btn">
-       <button class="btn btn-default" type="button"><a href="{{ '/submit/' + 'name:text:' + build }}">Submit</a></button>
+       <button class="btn btn-default" type="submit">Submit</a></button>
       </span>
+
     </div><!-- /input-group -->
+    </form>
    </div><!-- /.col-sm-4 -->
   </div>
   <br> 
+
  {% endif %}
 
 	{% for abilities in lst %}

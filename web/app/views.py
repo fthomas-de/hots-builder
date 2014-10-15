@@ -84,14 +84,21 @@ def create():
 	return render_template('create.html', page='create', imgLst = hero_lst, weekly_hero_lst = weekly_hero_lst)
 
 
-@app.route('/submit/<var>')
-def submit(var):
-	from dbupdate import insert_build
-	(name, text, build) = var.split(':')
-	(hero, _, _) = build.split('_')
-	insert_build(name=name, text=text, hero=hero, build=build)
-	print name, text, hero, build
-	return redirect('/', code=302)
+@app.route('/submit', methods=['GET', 'POST'])
+def submit():
+	if request.method == 'POST':
+		from .forms import Build
+		form = Build()
+		if form.validate() == True:
+			print form
+		return 'Penis'
+	else:
+		from dbupdate import insert_build
+		(name, text, build) = var.split(':')
+		(hero, _, _) = build.split('_')
+		insert_build(name=name, text=text, hero=hero, build=build)
+		print name, text, hero, build
+		return redirect('/', code=302)
 
 @app.route('/<name>')
 def build(name):
