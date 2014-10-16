@@ -50,7 +50,7 @@ def id():
 @app.route('/hots/builder')
 def index():
 	from dbupdate import get_latest_builds
-	builds = get_latest_builds(5)
+	builds = get_latest_builds(3)
 	print builds
 	if len(builds) == 0:
 		builds = None
@@ -84,21 +84,21 @@ def create():
 	return render_template('create.html', page='create', imgLst = hero_lst, weekly_hero_lst = weekly_hero_lst)
 
 
-@app.route('/submit', methods=['GET', 'POST'])
-def submit():
-	if request.method == 'POST':
-		from .forms import Build
-		form = Build()
-		if form.validate() == True:
-			print form
-		return 'Penis'
-	else:
-		from dbupdate import insert_build
-		(name, text, build) = var.split(':')
-		(hero, _, _) = build.split('_')
-		insert_build(name=name, text=text, hero=hero, build=build)
-		print name, text, hero, build
-		return redirect('/', code=302)
+@app.route('/submit/<var>', methods=['POST'])
+def submit(var):
+	from .forms import Build
+	form = Build()
+	name = form.build_name.data
+	print var
+	print name
+	
+	from dbupdate import insert_build
+	(hero, _, build) = var.split('_')
+	text = ""
+	insert_build(name=name, text=text, hero=hero, build=var)
+	print name, text, hero, build
+
+	return redirect('/', code=302)
 
 @app.route('/<name>')
 def build(name):
