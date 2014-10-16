@@ -51,9 +51,13 @@ def id():
 def index():
 	from dbupdate import get_latest_builds
 	builds = get_latest_builds(3)
-	print builds
+	#print builds
 	if len(builds) == 0:
 		builds = None
+	for build in builds:
+		import datetime
+		build.date = str(datetime.timedelta(seconds=build.date)).split(',')[1].strip()
+		
 	return render_template('index.html', page='index', builds=builds, mode=0)
 
 @app.route('/upvote_best/<name>')
@@ -73,8 +77,7 @@ def upvote_latest(name):
 @app.route('/best')
 def best():
 	from dbupdate import get_best_builds
-	builds = get_best_builds(5)
-	print builds
+	builds = get_best_builds(3)
 	if len(builds) == 0:
 		builds = None
 	return render_template('index.html', page='index', builds=builds, mode=1)
@@ -90,13 +93,15 @@ def submit(var):
 	form = Build()
 	name = form.build_name.data
 	print var
-	print name
+
+	if name == "":
+		return redirect('/' + var, code=302)
 	
-	from dbupdate import insert_build
+	#from dbupdate import insert_build
 	(hero, _, build) = var.split('_')
 	text = ""
 	insert_build(name=name, text=text, hero=hero, build=var)
-	print name, text, hero, build
+	#print name, text, hero, build
 
 	return redirect('/', code=302)
 

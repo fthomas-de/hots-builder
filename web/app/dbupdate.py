@@ -59,13 +59,13 @@ def insert_build(name, text, hero, build, votes=0, pos_votes=0):
 def get_best_builds(count):
 	builds = models.Build.query.order_by(models.Build.pos_votes.desc()).limit(count)
 	builds = builds.all()
-	print 'best_builds:', builds	
+	#print 'best_builds:', builds	
 	return builds
 
 def get_latest_builds(count):
 	builds = models.Build.query.order_by(models.Build.date.desc()).limit(count)
 	builds = builds.all()
-	print 'latest_builds:', builds
+	#print 'latest_builds:', builds
 	return builds
 
 def upvote(name):
