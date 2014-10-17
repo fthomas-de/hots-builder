@@ -56,7 +56,7 @@ def index():
 		builds = None
 	for build in builds:
 		import datetime
-		build.date = str(datetime.timedelta(seconds=build.date)).split(',')[1].strip()
+		build.date = str(datetime.timedelta(seconds=build.date+7200)).split(',')[1].strip()
 		
 	return render_template('index.html', page='index', builds=builds, mode=0)
 
@@ -97,7 +97,7 @@ def submit(var):
 	if name == "":
 		return redirect('/' + var, code=302)
 	
-	#from dbupdate import insert_build
+	from dbupdate import insert_build
 	(hero, _, build) = var.split('_')
 	text = ""
 	insert_build(name=name, text=text, hero=hero, build=var)
