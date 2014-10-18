@@ -18,6 +18,10 @@ Giant Killer;;10;Basic Attacks against enemy Heroes deal bonus damage equal to 1
 The Art of War;;10;On using Inspire, nearby enemies have their Attack Speed and Movement Speed lowered by 10%.
 Activated Rush;;10;Adrenaline Rush can be used on command. Doing so reduces the cooldown by 15 seconds.
 Spell Shield;;10;Upon taking Ability Damage, reduce all Ability Damage taken by 50% for 2 seconds. Can only trigger once every 30 seconds.
+Giant Killer;;13;Basic Attacks against enemy Heroes deal bonus damage equal to 1.5% of the Hero's max Health.
+The Art of War;;13;On using Inspire, nearby enemies have their Attack Speed and Movement Speed lowered by 10%.
+Activated Rush;;13;Adrenaline Rush can be used on command. Doing so reduces the cooldown by 15 seconds.
+Spell Shield;;13;Upon taking Ability Damage, reduce all Ability Damage taken by 50% for 2 seconds. Can only trigger once every 30 seconds.
 Executioner;;16;Basic Attacks deal 40% more damage against slowed, rooted, or stunned targets.
 Cluster Round;;16;Penetrating Round damage is increased by 10% for each additional target hit, and the width is increased by 50%.
 Bullseye;;16;The first enemy unit hit by Penetrating Round is stunned for 1 second and takes 50% more damage.
