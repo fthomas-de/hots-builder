@@ -2,6 +2,7 @@ from app import app
 from os import walk 
 from models import db
 from app import models, db
+from sqlalchemy.exc import IntegrityError, InvalidRequestError
 
 def update():
 	path = '/home/fthomas/Dokumente/hots-builder/web/app/static/hero-data/'
@@ -49,7 +50,6 @@ def insert_build(name, text, hero, build, votes=0, pos_votes=0):
 	print date
 	build = models.Build(name=name, text=text, hero=hero, votes=votes, pos_votes=pos_votes, build=build, date=date)
 
-	from sqlalchemy.exc import IntegrityError
 	try:
 		db.session.add(build)
 		db.session.commit()
@@ -98,11 +98,32 @@ def update_ability(name, text, lvl, hero_id):
 		ability.text = text
 		db.session.commit()
 
-def insert_id(u_agent, ip):
+def insert_id(u_agent, ip, build):
 	import hashlib
 	hash = hashlib.sha224(u_agent + ip).hexdigest()
-	pass
+	id = models.Id(hash=hash, build=build)
+	print hash
+	check = models.Id.query.filter_by(hash=hash).first()
+	print check
+	
+	if not check == None:
+		print 'Duplicate ID: None'
+		return False	
 
+	try:
+		print 'Insert ID' 
+		db.session.add(id)
+		db.session.commit()
+		return True
+
+	except IntegrityError:
+		print 'IntegrityError: Duplicate ID'
+		return False
+	
+	except InvalidRequestError:
+		print 'InvalidRequestError: Duplicate ID'
+		return Flase
+ 
 def get_hero_abilities(name, lvl):
 	hero_id = models.Hero.query.filter_by(name=name).first().id
 	abilities = models.Ability.query.filter_by(hero_id=hero_id, lvl=lvl).all()

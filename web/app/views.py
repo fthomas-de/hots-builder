@@ -28,7 +28,7 @@ def chunks(lst):
 	for i in xrange(0, len(lst), 2):
 		yield(lst[i:i+2])
 
-def id():
+def get_id():
 	u_agent = request.headers.get('User-Agent')
 	ip = request.remote_addr
 	return u_agent, ip
@@ -59,35 +59,37 @@ def index():
 @app.route('/upvote_best/<name>')
 def upvote_best(name):
 	from dbupdate import upvote, insert_id
-	print 'Upvoting: ', name
-	upvote(name)
 
-	u_agent, ip = id()
-	insert_id(u-agent, ip)
+	u_agent, ip = get_id()
+	check = insert_id(u-agent, ip, name)
+	if check:
+		upvote(name)
 
 	return redirect('/best', code=302)
 
 @app.route('/upvote_latest/<name>')
 def upvote_latest(name):
 	from dbupdate import upvote, insert_id
-	print 'Upvoting: ', name
-	upvote(name)
 
-	u_agent, ip = id()
-	insert_id(u_agent, ip)
+	u_agent, ip = get_id()
+	check = insert_id(u_agent, ip, name)
+	if check:
+		upvote(name)
 
 	return redirect('/', code=302)
 
 @app.route('/upvote_build/<name>')
 def upvote_build(name):
 	from dbupdate import upvote, insert_id, get_build
+
 	build = get_build(name)
 	build_name = build.name
 	build = build.build
-	upvote(name)
 
-	u_agent, ip = id()
-	insert_id(u_agent, ip)
+	u_agent, ip = get_id()
+	check = insert_id(u_agent, ip, name)
+	if check:
+		upvote(name)
 
 	return redirect('/' + build + '_' + name) 
 

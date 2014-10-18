@@ -8,9 +8,9 @@
 	<meta name="author" content="Florian Thomas">
 
 	<title>Heroes of the Storm</title>
-
+	
 	<!-- Bootstrap core CSS -->
-	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/css/bootstrap.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
 	<link href="static/css/style.css" rel="stylesheet">
@@ -26,12 +26,9 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="/"><img src="static/img/icons/heroes_icon_small.png">  HotS Builder</a>
-			</div>
+			</div> <!-- navbar header -->
 			<div class="collapse navbar-collapse">
 				{% if page == 'index' %}	 
 				{% include "nav_index.html" %}
@@ -39,14 +36,15 @@
 				{% elif page == 'create' %}
 				{% include "nav_create.html" %}
 
-				{% elif page == "build" %}
+				{% elif page == 'build' %}
 				{% include "nav_create.html" %}
 
-				{% elif page == "overview" %}
-				{% include "nav_overview.html" %}
+				{% elif page == 'overview' %}
+				{% include "nav_overview.html" %}	
 
 				{% endif %}
 			</div><!--/.nav-collapse -->
+				
 		</div>
 	</div>
 	<!-- end navigation -->
@@ -69,7 +67,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/bootstrap.js"></script>
+
     {% if page == 'build' or page == 'overview' %}
 
 
