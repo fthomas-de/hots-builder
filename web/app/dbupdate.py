@@ -44,28 +44,33 @@ def update():
 
 
 def insert_build(name, text, hero, build, votes=0, pos_votes=0):
-	from time import time
-	date = int(time())
-
+	from time import strftime
+	date = strftime("%H:%M:%S - %d/%m/%Y")
+	print date
 	build = models.Build(name=name, text=text, hero=hero, votes=votes, pos_votes=pos_votes, build=build, date=date)
 
 	from sqlalchemy.exc import IntegrityError
 	try:
 		db.session.add(build)
 		db.session.commit()
+		return True
+
 	except IntegrityError:
 		print 'IntegrityError: Duplicate name'	
+		return False
+
+def get_build(name):
+	build = models.Build.query.filter_by(name=name).first()
+	return build
 
 def get_best_builds(count):
 	builds = models.Build.query.order_by(models.Build.pos_votes.desc()).limit(count)
 	builds = builds.all()
-	#print 'best_builds:', builds	
 	return builds
 
 def get_latest_builds(count):
 	builds = models.Build.query.order_by(models.Build.date.desc()).limit(count)
 	builds = builds.all()
-	#print 'latest_builds:', builds
 	return builds
 
 def upvote(name):
@@ -90,6 +95,24 @@ def update_ability(name, text, lvl, hero_id):
 		print 'Inserting:', name, lvl, hero_id
 		insert_ability(name, text, lvl, hero_id)
 	else:
-		print 'Updating:', name, lvl, hero_id
 		ability.text = text
 		db.session.commit()
+
+def insert_id(u_agent, ip):
+	import hashlib
+	hash = hashlib.sha224(u_agent + ip).hexdigest()
+	pass
+
+def get_hero_abilities(name, lvl):
+	hero_id = models.Hero.query.filter_by(name=name).first().id
+	abilities = models.Ability.query.filter_by(hero_id=hero_id, lvl=lvl).all()
+	return abilities
+
+def get_build_abilities(name):
+	build = models.Build.query.filter_by(name=name).first.build
+	return build
+	
+	
+def get_abilityname_by_id(id):
+	ability_name = models.Ability.query.filter_by(id=id).first().name
+	return ability_name

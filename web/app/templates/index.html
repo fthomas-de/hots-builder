@@ -1,6 +1,7 @@
 {% extends 'template.html' %}
 {% block content %}
 <div class="bcolor">
+
  <div class="page-header">
 	{% if mode == 0 %}
 		<h1>Recent Builds</h1>
@@ -8,29 +9,35 @@
 		<h1>Best Builds</h1>
 	{% endif %}
  </div>
- <div>
+
+
 	{% if builds == None %}
 		<h3>There are currently no builds available</h3>
 		<p>Click <a href="/create"><u>here</u></a> to create one</p>
 	{% else %}
+		<ul class="pager">
+			<li class="previous"><a href="#">Next</a></li>
+			<li class="next"><a href="#">Previous</a></li>
+		</ul>
+
+		
+		<div class="row">
 		{% for build in builds %}
-			<ul class="pager">
-				{% if mode == 0 %}
-					<li class="previous"><a href="/upvote_latest/{{ build.name }}">+1</a></li>
-				{% elif mode == 1 %}
-					<li class="previous"><a href="/upvote_best/{{ build.name }}">+1</a></li>
-				{% endif %}
-				<li class="next"><a href="{{ '/' + build.build + 'a' }}">View</a></li>
-  			</ul>
-			{{ build.name }} <br>
-			<!-- {{ build.text }} <br> -->
-			{{ build.hero }} <br>
-			{{ build.build }} <br>
-			{{ build.pos_votes }} <br>
-			{{ build.date }} <br>
-			<hr>
+			<div class="col-sm-3 col-sm-offset-2">
+
+			<a href="{{ '/' + build.build + '_' + build.name }}">{{ build.name }}</a>
+			<a href="{{ build.hero }}"><img src="{{ url_for('static', filename='img/heroes/' + build.hero + '_frame.png') }}" width="50px" /></a>
+			<span class="label label-success">{{ build.pos_votes }} votes</span><br>
+		
+			posted at {{ build.date }} <br><br>
+			<ul class="list-group">
+				{% for ability in abilities %}
+					<li class="list-group-item">{{ ability }}</li>
+				{% endfor %}
+			</ul>	
+			</div>
 		{% endfor %}
+		</div>
 	{% endif %}
- </div>
 </div>
 {% endblock content %}

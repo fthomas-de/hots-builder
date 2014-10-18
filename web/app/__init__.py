@@ -9,6 +9,8 @@ with open('/home/fthomas/Dokumente/hots-builder/web/app/sqluser') as file:
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://' + login + '@localhost/hots'
 
+app.secret_key = 'key'
+
 db = SQLAlchemy(app)
 
 from app import views, models

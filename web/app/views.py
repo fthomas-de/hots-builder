@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, abort, jsonify
+from flask import Flask, render_template, url_for, request, redirect, abort, jsonify, session
 from app import app
 from os import walk
 from models import db
@@ -24,55 +24,72 @@ with open('/home/fthomas/Dokumente/hots-builder/web/app/static/hero-data/weekly-
 
 
 #helper
-def get_hero_abilities(name, lvl=1):
-        from app import db, models
-
-        hero_id = models.Hero.query.filter_by(name=name).first().id
-        abilities = models.Ability.query.filter_by(hero_id=hero_id, lvl=lvl).all()
-
-	return abilities
-
 def chunks(lst):
 	for i in xrange(0, len(lst), 2):
 		yield(lst[i:i+2])
 
 def id():
 	u_agent = request.headers.get('User-Agent')
-	ip = jsonify({'ip': request.remote_addr}), 200
-	ip2 = request.environ['REMOTE_ADDR']	
-	ip3 = request.remote_addr
-	print 'agent', u_agent
-	print 'IP', ip3
+	ip = request.remote_addr
+	return u_agent, ip
 
 #routing
 @app.route('/')
 @app.route('/hots')
 @app.route('/hots/builder')
 def index():
-	from dbupdate import get_latest_builds
-	builds = get_latest_builds(3)
-	#print builds
+	from dbupdate import get_latest_builds, get_abilityname_by_id
+	builds = get_latest_builds(2)
+	abilities = []
+
 	if len(builds) == 0:
 		builds = None
-	for build in builds:
-		import datetime
-		build.date = str(datetime.timedelta(seconds=build.date+7200)).split(',')[1].strip()
-		
-	return render_template('index.html', page='index', builds=builds, mode=0)
+	else:
+		ability_ids = builds[0].build.split('-')[1:]
+		abilities = []
+		for id in ability_ids:
+			abilities.append(str(get_abilityname_by_id(int(id))))
+
+	return render_template('index.html', 
+				page='index', 
+				builds=builds,
+				abilities=abilities, 
+				mode=0)
 
 @app.route('/upvote_best/<name>')
 def upvote_best(name):
-	from dbupdate import upvote
+	from dbupdate import upvote, insert_id
+	print 'Upvoting: ', name
 	upvote(name)
-	id()
+
+	u_agent, ip = id()
+	insert_id(u-agent, ip)
+
 	return redirect('/best', code=302)
 
 @app.route('/upvote_latest/<name>')
 def upvote_latest(name):
-	from dbupdate import upvote
+	from dbupdate import upvote, insert_id
+	print 'Upvoting: ', name
 	upvote(name)
-	id()
+
+	u_agent, ip = id()
+	insert_id(u_agent, ip)
+
 	return redirect('/', code=302)
+
+@app.route('/upvote_build/<name>')
+def upvote_build(name):
+	from dbupdate import upvote, insert_id, get_build
+	build = get_build(name)
+	build_name = build.name
+	build = build.build
+	upvote(name)
+
+	u_agent, ip = id()
+	insert_id(u_agent, ip)
+
+	return redirect('/' + build + '_' + name) 
 
 @app.route('/best')
 def best():
@@ -80,11 +97,17 @@ def best():
 	builds = get_best_builds(3)
 	if len(builds) == 0:
 		builds = None
-	return render_template('index.html', page='index', builds=builds, mode=1)
+	return render_template('index.html', 
+				page='index', 
+				builds=builds, 
+				mode=1)
 
 @app.route('/create')
 def create():
-	return render_template('create.html', page='create', imgLst = hero_lst, weekly_hero_lst = weekly_hero_lst)
+	return render_template('create.html', 
+				page='create', 
+				imgLst = hero_lst, 
+				weekly_hero_lst = weekly_hero_lst)
 
 
 @app.route('/submit/<var>', methods=['POST'])
@@ -100,32 +123,38 @@ def submit(var):
 	from dbupdate import insert_build
 	(hero, _, build) = var.split('_')
 	text = ""
-	insert_build(name=name, text=text, hero=hero, build=var)
-	#print name, text, hero, build
-
-	return redirect('/', code=302)
+	if insert_build(name=name, text=text, hero=hero, build=var):
+		return redirect('/', code=302)
+	else: 
+		return redirect('/' + var, code=302)
 
 @app.route('/<name>')
 def build(name):
 	build = name
-	try:
-		name, lvl, hist = name.split('_')
-		lvl = int(lvl)
-	except ValueError:
+	build_name = ""
+	
+	tuple = name.split('_')
+	if len(tuple) == 3:
+		name, lvl, hist =  tuple
+		mode = 2
+	elif len(tuple) == 4:
+		name, lvl, hist, build_name = tuple
+		mode = 3
+	else:
 		#case 0: first call
 		print 'Exception: Resetting'
 		hist = ''
 		lvl = 1
+		build_name = ""
+		mode = 2
+	lvl = int(lvl)
+
 	
 	if not name + '_frame.png' in hero_img_names: abort(401)
 	
 	#case 1: rdy now
-	mode = 2
         if lvl == 0:
 		from app import db, models
-		if hist[-1] == 'a':
-			hist == hist[:-1]
-			mode = 3
 	
 		#get all skilled abilities
 		hist = hist.split('-')[1:]
@@ -138,9 +167,18 @@ def build(name):
 		lst = chunks(lst)
 		from .forms import Build
 		form = Build()
-                return render_template('overview.html', page='overview', name=name, lst=lst, s=s, build=build, mode=mode, form=form)
+                return render_template('overview.html', 
+					page='overview', 
+					name=name, 
+					lst=lst, 
+					s=s, 
+					build=build, 
+					mode=mode, 
+					form=form,
+					build_name=build_name)
 	
  	#case 2: not rdy yet
+	from dbupdate import get_hero_abilities
 	abilities = get_hero_abilities(name, lvl)
         lst = chunks(abilities)
 
