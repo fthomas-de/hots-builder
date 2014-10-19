@@ -18,10 +18,10 @@ hero_lst.append(hero_img_names[26:34])
 
 weekly_hero_lst = []
 
-assassins = get_heroes_by_role('assassin')
-warriors = get_heroes_by_role('warrior')
-supports = get_heroes_by_role('support')
-specialists = get_heroes_by_role('specialist')
+assassins = get_heroes_by_role('Assassin')
+warriors = get_heroes_by_role('Warrior')
+supports = get_heroes_by_role('Support')
+specialists = get_heroes_by_role('Specialist')
 
 with open('/home/fthomas/Dokumente/hots-builder/web/app/static/hero-data/weekly-heroes') as file:
 	for row in file:
@@ -72,7 +72,7 @@ def index():
 
 @app.route('/best')
 def best():
-	from dbupdate import get_best_builds
+	from dbupdate import get_best_builds, get_abilityname_by_id
 	builds = get_best_builds(2)
 	abilities = []
 
@@ -91,7 +91,11 @@ def best():
 			
 	return render_template('index.html', 
 				page='index', 
-				builds=builds, 
+				builds=builds,
+				assassins=assassins,
+                                warriors=warriors,
+                                supports=supports,
+                                specialists=specialists, 
 				mode=1)
 
 @app.route('/builds/<hero_name>')

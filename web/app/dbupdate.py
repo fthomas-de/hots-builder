@@ -131,10 +131,13 @@ def get_abilityname_by_id(id):
 	return ability_name
 
 def get_heroes_by_role(role):
+	print 'Rolle: ', role
 	roles = models.Hero.query.filter_by(role=role).all()
 	names = []
 	for role in roles:
 		names.append(role.name)
+	names = names.sort()
+	print 'Heldennamen: ', names
 	return names
 
 def get_builds_by_hero_name(name):
