@@ -70,6 +70,30 @@ def index():
 				specialists=specialists, 
 				mode=0)
 
+@app.route('/best')
+def best():
+	from dbupdate import get_best_builds
+	builds = get_best_builds(2)
+	abilities = []
+
+	if len(builds) == 0:
+		builds = None
+	else:
+		for build in builds:
+			ability = []
+			ability_ids = build.build.split('-')[1:]
+			
+			for id in ability_ids:
+				ability.append(str(get_abilityname_by_id(int(id))))
+			abilities.append(ability)
+
+		builds = zip(builds, abilities)	
+			
+	return render_template('index.html', 
+				page='index', 
+				builds=builds, 
+				mode=1)
+
 @app.route('/builds/<hero_name>')
 def builds(hero_name):
 	from dbupdate import get_builds_by_hero_name, get_abilityname_by_id
@@ -135,17 +159,6 @@ def upvote_build(name):
 		upvote(name)
 
 	return redirect('/' + build + '_' + name) 
-
-@app.route('/best')
-def best():
-	from dbupdate import get_best_builds
-	builds = get_best_builds(3)
-	if len(builds) == 0:
-		builds = None
-	return render_template('index.html', 
-				page='index', 
-				builds=builds, 
-				mode=1)
 
 @app.route('/create')
 def create():
