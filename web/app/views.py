@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, abort, jso
 from app import app
 from os import walk
 from models import db
+from dbupdate import get_heroes_by_role
 
 #set up available heroes for create page
 path = '/home/fthomas/Dokumente/hots-builder/web/app/static/img/heroes'
@@ -16,6 +17,11 @@ hero_lst.append(hero_img_names[20:26])
 hero_lst.append(hero_img_names[26:34])
 
 weekly_hero_lst = []
+
+assassins = get_heroes_by_role('assassin')
+warriors = get_heroes_by_role('warrior')
+supports = get_heroes_by_role('support')
+specialists = get_heroes_by_role('specialist')
 
 with open('/home/fthomas/Dokumente/hots-builder/web/app/static/hero-data/weekly-heroes') as file:
 	for row in file:
@@ -38,14 +44,9 @@ def get_id():
 @app.route('/hots')
 @app.route('/hots/builder')
 def index():
-	from dbupdate import get_latest_builds, get_abilityname_by_id, get_heroes_by_role
+	from dbupdate import get_latest_builds, get_abilityname_by_id
 	builds = get_latest_builds(2)
 	abilities = []
-
-	assassins = get_heroes_by_role('assassin')
-	warriors = get_heroes_by_role('warrior')
-	supports = get_heroes_by_role('support')
-	specialists = get_heroes_by_role('specialist')
 
 	if len(builds) == 0:
 		builds = None
@@ -71,11 +72,7 @@ def index():
 
 @app.route('/builds/<hero_name>')
 def builds(hero_name):
-	from dbupdate import get_heroes_by_role, get_builds_by_hero_name, get_abilityname_by_id
-	assassins = get_heroes_by_role('assassin')
-	warriors = get_heroes_by_role('warrior')
-	supports = get_heroes_by_role('support')
-	specialists = get_heroes_by_role('specialist')
+	from dbupdate import get_builds_by_hero_name, get_abilityname_by_id
 	
 	builds = get_builds_by_hero_name(hero_name)
 	abilities = []
