@@ -47,8 +47,17 @@ def update():
 def insert_build(name, text, hero, build, votes=0, pos_votes=0):
 	from time import strftime
 	date = strftime("%H:%M:%S - %d/%m/%Y")
-	print date
 	build = models.Build(name=name, text=text, hero=hero, votes=votes, pos_votes=pos_votes, build=build, date=date)
+
+	if len(name) < 4 or len(name) > 13:
+		print 'Wrong len()'
+		return False
+
+	import re
+	print str(name)
+	if not re.match(r'[\w-]*$', name):
+		print 'invalid characters'
+		return False
 
 	try:
 		db.session.add(build)
@@ -73,9 +82,7 @@ def insert_id(u_agent, ip, build):
 	import hashlib
 	hash = hashlib.sha224(u_agent + ip).hexdigest()
 	id = models.Id(hash=hash, build=build)
-	print hash
 	check = models.Id.query.filter_by(hash=hash).first()
-	print check
 	
 	if not check == None:
 		print 'Duplicate ID: None'

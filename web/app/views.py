@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, abort, jsonify, session
+from flask import Flask, render_template, url_for, request, redirect, abort, jsonify, session, flash
 from app import app
 from os import walk
 from models import db
@@ -179,15 +179,10 @@ def submit(var):
 
 @app.route('/<name>')
 def build(name):
+	print str(name)
 	build = name
 	build_name = ""
 
-	from dbupdate import get_heroes_by_role
-	assassins = get_heroes_by_role('assassin')
-	warriors = get_heroes_by_role('warrior')
-	supports = get_heroes_by_role('support')
-	specialists = get_heroes_by_role('specialist')
-	
 	tuple = name.split('_')
 	if len(tuple) == 3:
 		name, lvl, hist =  tuple
@@ -220,8 +215,10 @@ def build(name):
 			lst.append(ability)
 			s += str(ability.id) + '_'	
 		lst = chunks(lst)
+
 		from .forms import Build
 		form = Build()
+
                 return render_template('overview.html', 
 					page='overview', 
 					name=name, 
