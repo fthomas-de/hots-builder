@@ -9,15 +9,14 @@
 
 	<title>Heroes of the Storm</title>
 	
-	<!-- Bootstrap core CSS -->
-	<link href="static/css/bootstrap.css" rel="stylesheet">
-
-	<!-- Custom styles for this template -->
-	<link href="static/css/style.css" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
 </head>
 
-<link rel="shortcut icon" href="static/img/icons/heroes_icon_small.png">
+<link rel="shortcut icon" href="{{ url_for('static', filename='img/icons/heroes_icon_small.png') }}">
 
 <body>
 	<!-- begin navigation -->   
@@ -27,7 +26,7 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 				</button>
-				<a class="navbar-brand" href="/"><img src="static/img/icons/heroes_icon_small.png">  HotS Builder</a>
+				<a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='img/icons/heroes_icon_small.png') }}">  HotS Builder</a>
 			</div> <!-- navbar header -->
 			<div class="collapse navbar-collapse">
 				{% if page == 'index' %}	 
@@ -44,7 +43,6 @@
 
 				{% endif %}
 			</div><!--/.nav-collapse -->
-				
 		</div>
 	</div>
 	<!-- end navigation -->
@@ -66,9 +64,9 @@
     <!-- ignore: Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../../dist/js/bootstrap.js"></script>
-
+    -->
     {% if page == 'build' or page == 'overview' %}
 
 

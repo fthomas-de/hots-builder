@@ -1,0 +1,30 @@
+Support
+Conjurer's Pursuit;;1;Every 3 Regeneration Globes gathered grants an extra +0.25 Mana per second, permanently.
+Moonburn;;1;Moonfire deals 30% more damage to non-Heroic targets.
+Harmony;;1;Casting Regrowth on Minions or Mercenaries instantly returns 100% of the Mana cost.
+Scouting Drone;;1;Places a Scouting Drone at target location, revealing a large area around it for 60 seconds. This drone can be seen and killed by enemies. 60s cooldown.
+Vengeful Roots;;4;Entangling Roots also spawns a Treant with 300 Health that does 20 damage each attack for 12 seconds.
+Shan'do's Clarity (Trait);;4;Innervate's cooldown is reduced by 10 seconds and grants Mana twice as fast.
+Versatile (Trait);;4;Innervate also increases Attack Speed by 10% and can be cast on non-mana using Heroes.
+Protective Shield;;4;Activate to shield an allied Hero from 300 damage for 5 seconds. 60s cooldown.
+Healing Ward;;4;Activate to place a ward on the ground that heals allies in an area for 3.12% of their max Health every second for 10 seconds. 60s cooldown.
+Battle Momentum;;7;Basic Attacks reduce Ability cooldowns by 0.5 seconds.
+Enduring Growth;;7;Increases the duration of Regrowth by 6 seconds.
+Strangling Vines;;7;Entangling Roots deals 100% more damage.
+Elune's Grace;;7;Increases the range of Regrowth, Moonfire, and Entangling Roots by 2.
+Calldown: MULE;;7;Activate to calldown a Mule that repairs Structures, one at a time, near target point for 60 seconds, healing for 100 Health every 1 second. Grants 1 ammo every 5 seconds. 60s cooldown.
+Tranquility;;10;Heals 20 Health per second to nearby allies over 10 seconds. 100s cooldown.
+Twilight Dream;;10;After a short delay, deal 100 damage in a large area around you, silencing enemies for 3 seconds. 90s cooldown.
+Life Seed;;13;Nearby damaged allied Heroes will automatically gain the heal over time portion of Regrowth. This effect has a 15 second cooldown.
+Full Moonfire;;13;Moonfire radius increased by 50% and Mana cost reduced to 10.
+Shrink Ray;;13;Activate to reduce an enemy Hero's damage by 50% and Movement Speed by 50% for 4 seconds. 60s cooldown.
+Ice Block;;13;Activate to place yourself in stasis and gain invulnerability for 3 seconds. 80s cooldown.
+Rewind;;13;Activate to reduce the cooldown of your Basic Abilities by 10 seconds. 60s cooldown.
+Hardened Focus;;16;While above 80% life, your Basic Ability cooldowns regenerate 50% faster.
+Hindering Moonfire;;16;Moonfire slows targets by 20% for 2 seconds.
+Lunar Shower;;16;Using Moonfire reduces the cooldown of your next Moonfire by 0.5 seconds, and increases the damage by 10%. Stacks up to 3 times.
+Tenacious Roots;;16;Entangling Roots grows 25% larger, lasts 25% longer, and roots targets for 0.5 seconds longer.
+Bolt of the Storm;;20;Activate to teleport to a nearby location. 40s cooldown.
+Storm Shield;;20;Activate to give all nearby allied Heroes a Shield for 20% of their max Health for 3 seconds. 45s cooldown.
+Serenity;;20;Tranquility healing amount is increased by 25% and restores 5 Mana per second.
+Nightmare;;20;Twilight Dream silence duration increased to 4 seconds and also slows enemies by 50%.

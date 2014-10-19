@@ -38,23 +38,69 @@ def get_id():
 @app.route('/hots')
 @app.route('/hots/builder')
 def index():
-	from dbupdate import get_latest_builds, get_abilityname_by_id
+	from dbupdate import get_latest_builds, get_abilityname_by_id, get_heroes_by_role
 	builds = get_latest_builds(2)
 	abilities = []
+
+	assassins = get_heroes_by_role('assassin')
+	warriors = get_heroes_by_role('warrior')
+	supports = get_heroes_by_role('support')
+	specialists = get_heroes_by_role('specialist')
 
 	if len(builds) == 0:
 		builds = None
 	else:
-		ability_ids = builds[0].build.split('-')[1:]
-		abilities = []
-		for id in ability_ids:
-			abilities.append(str(get_abilityname_by_id(int(id))))
+		for build in builds:
+			ability = []
+			ability_ids = build.build.split('-')[1:]
+			
+			for id in ability_ids:
+				ability.append(str(get_abilityname_by_id(int(id))))
+			abilities.append(ability)
+
+		builds = zip(builds, abilities)
 
 	return render_template('index.html', 
 				page='index', 
 				builds=builds,
-				abilities=abilities, 
+				assassins=assassins,
+				warriors=warriors,
+				supports=supports,
+				specialists=specialists, 
 				mode=0)
+
+@app.route('/builds/<hero_name>')
+def builds(hero_name):
+	from dbupdate import get_heroes_by_role, get_builds_by_hero_name, get_abilityname_by_id
+	assassins = get_heroes_by_role('assassin')
+	warriors = get_heroes_by_role('warrior')
+	supports = get_heroes_by_role('support')
+	specialists = get_heroes_by_role('specialist')
+	
+	builds = get_builds_by_hero_name(hero_name)
+	abilities = []
+	if len(builds) == 0:
+		builds = None
+	else:
+		for build in builds:
+			ability = []
+			ability_ids = build.build.split('-')[1:]
+			
+			for id in ability_ids:
+				ability.append(str(get_abilityname_by_id(int(id))))
+			abilities.append(ability)
+
+		builds = zip(builds, abilities)
+
+	return render_template('index.html', 
+							page='index',
+							builds=builds,
+							hero_name=hero_name,
+							assassins=assassins,
+							warriors=warriors,
+							supports=supports,
+							specialists=specialists,
+							mode=2)
 
 @app.route('/upvote_best/<name>')
 def upvote_best(name):
@@ -106,9 +152,18 @@ def best():
 
 @app.route('/create')
 def create():
+	from dbupdate import get_heroes_by_role
+	assassins = get_heroes_by_role('assassin')
+	warriors = get_heroes_by_role('warrior')
+	supports = get_heroes_by_role('support')
+	specialists = get_heroes_by_role('specialist')
 	return render_template('create.html', 
 				page='create', 
-				imgLst = hero_lst, 
+				imgLst = hero_lst,
+				assassins=assassins,
+				warriors=warriors,
+				supports=supports,
+				specialists=specialists, 
 				weekly_hero_lst = weekly_hero_lst)
 
 
@@ -134,6 +189,12 @@ def submit(var):
 def build(name):
 	build = name
 	build_name = ""
+
+	from dbupdate import get_heroes_by_role
+	assassins = get_heroes_by_role('assassin')
+	warriors = get_heroes_by_role('warrior')
+	supports = get_heroes_by_role('support')
+	specialists = get_heroes_by_role('specialist')
 	
 	tuple = name.split('_')
 	if len(tuple) == 3:
@@ -177,6 +238,10 @@ def build(name):
 					build=build, 
 					mode=mode, 
 					form=form,
+					assassins=assassins,
+					warriors=warriors,
+					supports=supports,
+					specialists=specialists, 
 					build_name=build_name)
 	
  	#case 2: not rdy yet
@@ -198,6 +263,10 @@ def build(name):
 		lst=lst, 
 		lvl=lvl, 
 		hist=hist,
-		next_lvl=str(next_lvl))
+		next_lvl=str(next_lvl),
+		assassins=assassins,
+		warriors=warriors,
+		supports=supports,
+		specialists=specialists)
 		
 

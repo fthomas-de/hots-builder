@@ -1,0 +1,29 @@
+Warrior
+Deadly Strike;;1;Increase the damage of Flying Kick by 50%.
+Full Keg;;1;Increase the duration enemies are slowed by Keg Smash by 1.5 seconds.
+Consuming Flame;;1;Breath of Fire's burn effect when used on Brew-soaked targets is increased by 2 seconds.
+Regeneration Master;;1;Every 3 Regeneration Globes gathered grants an extra +4 Health per second, permanently.
+Bottomless Mug (Trait);;4;Increase maximum Brew by 50.
+Chug (Trait);;4;Gain Brew twice as fast while using Fortifying Brew.
+Amplified Healing;;4;Increases regeneration effects and all healing received by 30%.
+Deep Breath;;4;Range and arc of Breath of Fire increased by 25%.
+Swift Reflexes;;7;Every 4 seconds Chen can dodge an enemy Hero's Basic Attack, preventing all of its damage.
+Pressure Point;;7;Flying Kick roots enemies for 1 second.
+Ring of Fire;;7;After using Breath of Fire, ignite in a fiery aura, dealing 10 damage every second to nearby enemies for 5 seconds.
+Bolder Flavor (Trait);;7;Shield generation and maximum from Fortifying Brew increased by 40%.
+Brewmaster's Balance (Trait);;7;While at or below 50 Brew, regenerate an additional 5 Health per second. While at or above 50 Brew, gain 15% Movement Speed.
+Wandering Keg;;10;Jump inside the barrel, gain a 520 point Shield and roll towards the cursor, dealing 30 damage to enemies in the way and knocking them back. Lasts for 5 seconds, or until the Shield is broken.
+Storm, Earth, Fire;;10;Split into three elemental spirits for 15.15 seconds, each with 50% of your maximum Health, and enables two new leaping attacks for use. Storm attacks at range for 30 damage. Earth attacks slowly for 20 damage and slows enemies by 25%. Fire attacks quickly for 18 damage.
+Brew Strike;;13;Hitting a Brew-soaked target with Flying Kick reduces the cooldown by 1 second, and restores 10 Brew.
+Touch of Honey;;13;Increase the slow from Keg Smash to 40%.
+Enough to Share (Trait);;13;Fortifying Brew also Shields nearby allied Heroes for 5 per second.
+Last Drop (Trait);;13;If you drink for the full duration, your abilities cost no Brew for 5 seconds.
+Relentless;;13;Reduces the duration of silences, stuns, slows, roots, and polymorphs against your Hero by 50%.
+Combination Attack;;16;The next Basic Attack after using Flying Kick deals 200% bonus damage.
+Keg Toss;;16;Increase Keg Smash range by 200%.
+Combustion;;16;Breath of Fire deals 60 bonus damage immediately to Brew-soaked enemies instead of lighting them on fire.
+Combat Stance (Trait);;16;Shields from Fortifying Brew last for an additional 2 seconds after drinking stops.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Bolt of the Storm;;20;Activate to teleport to a nearby location. 40s cooldown.
+Untapped Potential;;20;Increases duration by 2 seconds. Additionally, gain an extra 5% Movement Speed whenever an enemy is hit, up to 100%.
+Elemental Conduit;;20;Using an ability will cause one of the elemental spirits to fight with you for 5 seconds. 9 second cooldown.

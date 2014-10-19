@@ -1,0 +1,27 @@
+Warrior
+Block;;1;Periodically reduces the damage received from Hero Basic Attacks by 50%. Stores up to 2 charges.
+Chew Your Food;;1;Using Devour also heals you for 9.555% of your max Health over 3.06 seconds.
+Heavy Slam;;1;Slam damage increased by 50%
+Regeneration Master;;1;Every 3 Regeneration Globes gathered grants an extra +4 Health per second, permanently.
+Amplified Healing;;4;Increases regeneration effects and all healing received by 30%.
+Superiority;;4;Reduce damage taken from non-Heroic enemies by 50%.
+Vile Cleaver (Trait);;4;Basic Attacks create a cloud of Vile Gas on the target.
+Putrid Ground;;4;Enemies hit by Slam are infected with Vile Gas.
+Tenderizer;;7;Basic Attacks slow enemies' Movement Speed by 25% for 1.5 seconds.
+Toxic Gas (Trait);;7;Increases Vile Gas radius by 118.75% and the duration of the effect by 2 seconds
+Last Bite;;7;If Devour kills an enemy, the cooldown is reduced by 15 seconds.
+Savor the Flavor;;7;Using Devour on an enemy Hero grants a permanent +2 Health per second.
+Putrid Bile;;10;Emit bile that deals 20 damage per second to enemies within, slowing them by 35%. You gain 20% Movement Speed while emitting bile. Lasts 8 seconds. 60s cooldown.
+Gorge;;10;Consume an enemy Hero, trapping them for 3.5 seconds and dealing 100 damage. When Gorge ends, the enemy Hero takes another 100 damage. The trapped Hero cannot move or act and doesn't take damage from other sources. Cannot be used on massive Heroes. 80s cooldown.
+Relentless;;13;Reduces the duration of silences, stuns, slows, roots, and polymorphs against your Hero by 50%.
+Mega Smash;;13;Range and arc of Slam increased by 25%.
+Indigestion;;13;Using Devour also creates a Retchling.
+Helping Hand;;13;Hook can also pull allied Heroes (but will not damage them).
+Pulverize;;16;Slam damage increased by 50%, and stuns targets for 0.5 seconds.
+Fishing Hook;;16;Hook has an additional 50% range.
+Shish Kabob;;16;Hook can pull up to 2 targets.
+Imposing Presence;;16;Enemies that attack you have their Attack Speed slowed by 30%.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Bolt of the Storm;;20;Activate to teleport to a nearby location. 40s cooldown.
+Regenerative Bile;;20;Putrid Bile lasts 2 seconds longer and heals for 50% of the damage dealt.
+Hungry Hungry Stitches;;20;While active, Gorge can be repeatedly recast until the first target is expelled. Duration increased by 1 second.

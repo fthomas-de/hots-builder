@@ -1,0 +1,30 @@
+Warrior
+Block;;1;Periodically reduces the damage received from Hero Basic Attacks by 50%. Stores up to 2 charges.
+Infused Hammer;;1;Stormbolt refunds 45 Mana for each enemy hit.
+Perfect Storm;;1;Stormbolt's damage is permanently increased by 5 for each enemy Hero hit.
+Reverberation;;1;Enemies hit by Thunderclap have their Attack Speed reduced by 33% for 3.5 seconds.
+Skullcracker;;4;Every 3rd Basic Attack against the same target will stun them for 0.25 seconds.
+Third Wind (Trait);;4;Increases Second Wind's Health Regeneration rates, and raises Health threshold to 40% Health for improved Regeneration.
+Sledgehammer;;4;Stormbolt deals 400% damage to Minions and Structures, and destroys 4 ammo from Structures.
+Crowd Control;;4;Each enemy hit by Thunderclap reduces its cooldown by 0.75 seconds.
+Thunderburn;;4;Thunderclap leaves a zone on the ground that explodes after 2 seconds dealing 25 damage and applying a 25% slow for 2 seconds.
+Piercing Bolt;;7;Stormbolt penetrates through, hitting 1 additional target.
+Landing Momentum;;7;Increases your Movement Speed by 20% for 2 seconds upon landing with Dwarf Toss.
+Battle Momentum;;7;Basic Attacks reduce Ability cooldowns by 0.5 seconds.
+Follow Through;;7;After using an ability, your next Basic Attack deals 25% additional damage.
+Avatar;;10;Transform for 20 seconds, gaining 500 Health and causing your Basic Attacks to stun enemies. 100s cooldown.
+Haymaker;;10;Deal 600 damage and knocks the target back, hitting enemies in the way for 150 damage and knocking them aside. 50s cooldown.
+Burning Rage;;13;Deal 10 damage per second to nearby enemies.
+Healing Static;;13;Heal for 1.5% of your Max Health for each target hit by Thunderclap.
+Thunderstrike;;13;Thunderclap deals 300% damage if only one target is hit.
+Spell Shield;;13;Upon taking Ability Damage, reduce all Ability Damage taken by 50% for 2 seconds. Can only trigger once every 30 seconds.
+Rewind;;13;Activate to reduce the cooldown of your Basic Abilities by 10 seconds. 60s cooldown.
+Dwarf Launch;;16;Increases the range and impact radius of Dwarf Toss by 75%.
+Heavy Impact;;16;Enemies hit by Dwarf Toss are stunned for 0.75 seconds.
+Executioner;;16;Basic Attacks deal 40% more damage against slowed, rooted, or stunned targets.
+Imposing Presence;;16;Enemies that attack you have their Attack Speed slowed by 30%.
+Stoneform (Trait);;16;Activate to heal for 39.56% of your maximum Health over 8 seconds. Second Wind is disabled during this time.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Fury of the Storm;;20;Basic Attacks bounce twice to nearby enemies for 50% damage.
+Unstoppable Force;;20;Increases the duration of Avatar by 30%, and the duration of Disables are reduced by 75% while in Avatar.
+Grand Slam;;20;Damage of Haymaker increased by 25%, and can store 2 charges.

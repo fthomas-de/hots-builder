@@ -1,0 +1,29 @@
+Support
+Spiritwalker's Grace;;1;Reduces mana cost from 70 to 45.
+Empowering Charge;;1;Lightning Shield also increases the damage of the target's next 3 Basic Attacks by 25%.
+Colossal Totem;;1;Increases the area of Earthbind Totem by 50% and its Health by 100%.
+Healing Totem;;1;Activate to place a Totem that heals allies in an area for 3.12% of their max Health every second for 10 seconds. 45s cooldown.
+Feral Heart (Trait);;4;Gain 100% increased Health Regeneration and 100% increased Mana Regeneration while in Ghost Wolf form.
+Chain Reaction;;4;Chain Heals on allies with Lightning Shield active are increased by 25%.
+Focused Attack;;4;Every 10 seconds, your next Basic Attack deals 50% additional damage. Basic Attacks reduce this cooldown by 1 second.
+Reactive Spark;;4;Lightning Shield's duration does not start until an enemy is nearby.
+Farsight;;4;Activate to reveal the target area. Enemies in the area are revealed for 4 seconds. 30s cooldown.
+Battle Momentum;;7;Basic Attacks reduce Ability cooldowns by 0.5 seconds.
+Earth Shield;;7;Lightning Shield also shields the ally, absorbing 200 damage over 3 seconds.
+Shadow Wolf (Trait);;7;When entering Ghost Wolf, you are cloaked for 2 seconds.
+Searing Attacks;;7;Activate to increase Basic Attack damage by 50% for 5 seconds. Each attack costs 15 Mana. 25s cooldown.
+Ancestral Healing;;10;After a short delay, heals target allied Hero for 600. 60s cooldown.
+Bloodlust;;10;Give nearby allied Heroes 40% Attack Speed and 30% Movement Speed. Lasts for 10 seconds. 120s cooldown.
+Healing Surge;;13;Increases Chain Heal's healing on the primary target by 25% and heal an additional target.
+Stormcaller;;13;Reduces the cooldown of Lightning Shield from 8 seconds to 6 seconds and its Mana cost by 50%.
+Lightning Totem;;13;Earthbind Totem automatically gains Lightning Shield when created.
+Feral Lunge (Trait);;13;While in Ghost Wolf, you lunge a short distance towards your attack target. The damage bonus for Basic Attacks in Ghost Wolf is increased from 100% to 200%.
+Spell Shield;;13;Upon taking Ability Damage, reduce all Ability Damage taken by 50% for 2 seconds. Can only trigger once every 30 seconds.
+Lightning Bond;;16;Casting Lightning Shield on an ally also casts it on you, including any talent bonuses.
+Earthgrasp Totem;;16;Increases the cast range of Earthbind Totem by 100% and the initial slow becomes a 1 second root.
+Blood for Blood;;16;Activate to steal 15% of target enemy's Max Health and slow its Movement Speed by 30% for 3 seconds.
+Berserk;;16;Activate to increase your Attack Speed by 40% and Movement Speed by 10% for 4 seconds.
+Fury of the Storm;;20;Basic Attacks bounce twice to nearby enemies for 50% damage.
+Storm Shield;;20;Activate to give all nearby allied Heroes a Shield for 20% of their max Health for 3 seconds. 45s cooldown.
+Farseer's Blessing;;20;Increases healing amount by 50%. Allies near the target are healed for 25% of the amount of health regained.
+Gladiator's War Shout;;20;Bloodlust affects all allied Heroes, Minions, and Mercenaries on the entire battleground and can be cast without breaking Ghost Wolf.

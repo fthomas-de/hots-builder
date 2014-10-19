@@ -59,25 +59,6 @@ def insert_build(name, text, hero, build, votes=0, pos_votes=0):
 		print 'IntegrityError: Duplicate name'	
 		return False
 
-def get_build(name):
-	build = models.Build.query.filter_by(name=name).first()
-	return build
-
-def get_best_builds(count):
-	builds = models.Build.query.order_by(models.Build.pos_votes.desc()).limit(count)
-	builds = builds.all()
-	return builds
-
-def get_latest_builds(count):
-	builds = models.Build.query.order_by(models.Build.date.desc()).limit(count)
-	builds = builds.all()
-	return builds
-
-def upvote(name):
-	build = models.Build.query.filter_by(name=name).first()
-	build.pos_votes = build.pos_votes + 1
-	db.session.commit()
-
 def insert_hero(name, role):
 	hero = models.Hero(name=name, role=role)
 	db.session.add(hero)
@@ -87,16 +68,6 @@ def insert_ability(name, text, lvl, hero_id):
 	ability = models.Ability(name=name, text=text, lvl=lvl, hero_id=hero_id)
 	db.session.add(ability)
 	db.session.commit()
-
-def update_ability(name, text, lvl, hero_id):
-	ability = models.Ability.query.filter_by(name=name, lvl=lvl, hero_id=hero_id).first()
-
-	if ability == None:
-		print 'Inserting:', name, lvl, hero_id
-		insert_ability(name, text, lvl, hero_id)
-	else:
-		ability.text = text
-		db.session.commit()
 
 def insert_id(u_agent, ip, build):
 	import hashlib
@@ -123,7 +94,21 @@ def insert_id(u_agent, ip, build):
 	except InvalidRequestError:
 		print 'InvalidRequestError: Duplicate ID'
 		return Flase
- 
+
+def get_build(name):
+	build = models.Build.query.filter_by(name=name).first()
+	return build
+
+def get_best_builds(count):
+	builds = models.Build.query.order_by(models.Build.pos_votes.desc()).limit(count)
+	builds = builds.all()
+	return builds
+
+def get_latest_builds(count):
+	builds = models.Build.query.order_by(models.Build.date.desc()).limit(count)
+	builds = builds.all()
+	return builds
+
 def get_hero_abilities(name, lvl):
 	hero_id = models.Hero.query.filter_by(name=name).first().id
 	abilities = models.Ability.query.filter_by(hero_id=hero_id, lvl=lvl).all()
@@ -137,3 +122,32 @@ def get_build_abilities(name):
 def get_abilityname_by_id(id):
 	ability_name = models.Ability.query.filter_by(id=id).first().name
 	return ability_name
+
+def get_heroes_by_role(role):
+	roles = models.Hero.query.filter_by(role=role).all()
+	names = []
+	for role in roles:
+		names.append(role.name)
+	return names
+
+def get_builds_by_hero_name(name):
+	builds = []
+	result = models.Build.query.filter_by(hero=name).limit(2).all()
+	for item in result:
+		builds.append(item)
+	return builds
+
+def upvote(name):
+	build = models.Build.query.filter_by(name=name).first()
+	build.pos_votes = build.pos_votes + 1
+	db.session.commit()
+
+def update_ability(name, text, lvl, hero_id):
+	ability = models.Ability.query.filter_by(name=name, lvl=lvl, hero_id=hero_id).first()
+
+	if ability == None:
+		print 'Inserting:', name, lvl, hero_id
+		insert_ability(name, text, lvl, hero_id)
+	else:
+		ability.text = text
+		db.session.commit()

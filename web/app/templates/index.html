@@ -7,22 +7,28 @@
 		<h1>Recent Builds</h1>
 	{% elif mode == 1 %}
 		<h1>Best Builds</h1>
+	{% elif mode == 2 %}
+		<h1>{{ hero_name }} Builds</h1>
 	{% endif %}
  </div>
 
 
 	{% if builds == None %}
 		<h3>There are currently no builds available</h3>
-		<p>Click <a href="/create"><u>here</u></a> to create one</p>
+		{% if not mode == 2 %}
+			<p>Click <a href="/create"><u>here</u></a> to create one</p>
+		{% else %}
+			<p>Click <a href="/{{ hero_name }}"><u>here</u></a> to create one</p>
+		{% endif %}
 	{% else %}
 		<ul class="pager">
-			<li class="previous"><a href="#">Next</a></li>
-			<li class="next"><a href="#">Previous</a></li>
+			<li class="previous disabled"><a href="#">Next</a></li>
+			<li class="next disabled"><a href="#">Previous</a></li>
 		</ul>
 
 		
 		<div class="row">
-		{% for build in builds %}
+		{% for (build, abilities) in builds %}
 			<div class="col-sm-3 col-sm-offset-2">
 
 			<a href="{{ '/' + build.build + '_' + build.name }}">{{ build.name }}</a>
@@ -39,5 +45,6 @@
 		{% endfor %}
 		</div>
 	{% endif %}
-</div>
+
+</div> <!-- bcolor -->
 {% endblock content %}

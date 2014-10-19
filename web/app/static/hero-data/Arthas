@@ -1,0 +1,27 @@
+Warrior
+Block;;1;Periodically reduces the damage received from Hero Basic Attacks by 50%. Stores up to 2 charges.
+Frost Presence;;1;Howling Blast cooldown lowered by 2 seconds.
+Frozen Wastes;;1;Frozen Tempest radius increased by 33%.
+Regeneration Master;;1;Every 3 Regeneration Globes gathered grants an extra +4 Health per second, permanently.
+Superiority;;4;Reduce damage taken from non-Heroic enemies by 50%.
+Eternal Hunger (Trait);;4;Mana restored by Frostmourne Hungers increased to 60.
+Destruction (Trait);;4;Damage boost of Frostmourne Hungers increased to 150% damage.
+Envenom;;4;Activate to poison an enemy Hero, dealing 210 damage over 6 seconds. 60s cooldown.
+Rune Tap;;7;Every 3rd Basic Attack heals you for 5.85% of your max Health.
+Obliterate (Trait);;7;Frostmourne Hungers also hits enemies near the target for 50% damage.
+Frost Strike (Trait);;7;Frostmourne Hunger also slows the target by 40% for 1.5 seconds.
+Death Touch;;7;Death Coil causes enemy Minions to explode, killing the target instantly and dealing its normal damage to other nearby enemies.
+Army of the Dead;;10;Summons Ghouls that last 15 seconds. Sacrifice Ghouls to heal for 150 Health. 90s cooldown.
+Summon Sindragosa;;10;Deals 150 damage, slows enemy Heroes, and freezes Minions for 10 seconds and Structures for 20 seconds. 90s cooldown.
+Spell Shield;;13;Upon taking Ability Damage, reduce all Ability Damage taken by 50% for 2 seconds. Can only trigger once every 30 seconds.
+Relentless;;13;Reduces the duration of silences, stuns, slows, roots, and polymorphs against your Hero by 50%.
+Trail of Frost;;13;Howling Blast impacts enemies while traveling.
+Biting Cold;;13;Frozen Tempest damage and cost increased by 50%.
+Frostmourne Feeds (Trait);;16;Increased application to your next 2 Basic Attacks.
+Immortal Coil;;16;Death Coil also heals when used on enemies. When used on self, the amount healed is increased by 50%.
+Embrace Death;;16;Death Coil deals 20% more damage for each 10% of life you are missing.
+Stoneskin;;16;Activate to gain 30% of your Max Health as Shields for 5 seconds. 60s cooldown.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Fury of the Storm;;20;Basic Attacks bounce twice to nearby enemies for 50% damage.
+Legion of Northrend;;20;3 additional Ghouls are created. Ghouls last 50% longer.
+Absolute Zero;;20;Sindragosa flies twice as far. Enemy Heroes are rooted for 1.5 seconds, and then slowed by 60% for 1.5 seconds.

@@ -1,0 +1,31 @@
+Specialist
+Regeneration Master;;1;Every 3 Regeneration Globes gathered grants an extra +4 Health per second, permanently.
+Demolitionist;;1;Basic Attacks against Structures destroy 1 ammo and deal an additional 10% damage.
+Scrap-o-Matic Smelter (Trait);;1;Increases the amount of Mana restored by scrap to 60.
+Break it Down! (Trait);;1;Increases the cooldown reduction granted by scrap to 9 over 3 seconds.
+Extra TNT;;1;Xplodium Charge damage increased by 10% per target hit, to a max of 100% increased damage.
+Superiority;;4;Reduce damage taken from non-heroic enemies by 50%.
+Minion Killer;;4;Deal 25% increased damage to Minions, Mercenaries, and Summons.
+Reduce, Reuse, Recycle (Trait);;4;Enemy minions that die near you have a 15% chance to drop scrap.
+Clockwerk Steam Fists;;4;Basic Attacks increase the duration of active Rock-It! Turrets by 1 second.
+Promote;;4;Activate to give target allied lane Minion +200% permanent Health and +100% permanent damage. Has 2 charges. 60s cooldown.
+Rock-It! Turret XL;;7;Turrets attack up to 2 additional targets for 50% damage.
+Mercenary Lord;;7;Mercenary camps your Hero captures gain the following bonuses: Siege Giants: 50% increased damage, Knights: 50% increased Health
+Engine Gunk;;7;Turret attacks slow Movement Speed by 25% for 2 seconds.
+First Aid;;7;Activate to heal 35% of your max Health over 6 seconds. 60s cooldown.
+Calldown: MULE;;7;Activate to calldown a Mule that repairs Structures, one at a time, near target point for 60 seconds, healing for 100 Health every 1 second. Grants 1 ammo every 5 seconds. 60s cooldown.
+Grav-O-Bomb 3000;;10;After a short delay, pulls enemies towards the center of the target area and deals 176-930 (150 + 26 per level) damage. 110s cooldown.
+Robo-Goblin;;10;Transforms in to a Robo-Goblin. Basic Attacks deal an additional 250% damage to Minions, Mercenaries, and Structures. The duration of Disabling effects are reduced by 50%. Lasts for 16 seconds. 80s cooldown.
+Burning Rage;;13;Deals 12-70 (10 + 2 per level) damage per second to nearby enemies.
+Kwik Release Charge;;13;Xplodium Charge can now be cast twice in rapid succession.
+EZ-PZ Dimensional Ripper;;13;Deth Lazor slows Heroes by 35% and freezes minions or structures for 3 seconds.
+Sprint;;13;Activate to increase Movement Speed by 75% for 3 seconds. 60s cooldown.
+Long-Ranged Turrets;;16;Turret range increased by 25%.
+Turret Storage;;16;Max Turret charges increased to 4.
+Hyperfocus Coils;;16;Deth Lazor charges twice as fast.
+Goblin Fusion;;16;Deth Lazor gains an additional charge level after reaching max size, which increases the damage dealt by 50%.
+Stoneskin;;16;Activate to gain 30% of your max Health in Shields for 5 seconds. 60s cooldown.
+Resurgence of the Storm;;20;Upon dying, revive back at your Altar after 5 seconds. This can occur once every 120 seconds.
+Swift Storm;;20;Your Hero is no longer dismounted from taking damage. Increases mount speed to +60% Move Speed.
+Miniature Black Hole;;20;Grav-O-Bomb radius increased by 25% and damage increased by 50%.
+Mecha-Lord ;;20;Basic attacks deal an additional 130% damage to Heroes and increase the duration of Robo-Goblin by .5 seconds per hit.
