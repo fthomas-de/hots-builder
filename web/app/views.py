@@ -19,9 +19,9 @@ hero_lst.append(hero_img_names[26:34])
 weekly_hero_lst = []
 
 assassins = get_heroes_by_role('assassin')
-	warriors = get_heroes_by_role('warrior')
-	supports = get_heroes_by_role('support')
-	specialists = get_heroes_by_role('specialist')
+warriors = get_heroes_by_role('warrior')
+supports = get_heroes_by_role('support')
+specialists = get_heroes_by_role('specialist')
 
 with open('/home/fthomas/Dokumente/hots-builder/web/app/static/hero-data/weekly-heroes') as file:
 	for row in file:
