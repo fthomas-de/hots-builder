@@ -81,15 +81,15 @@ def insert_ability(name, text, lvl, hero_id):
 def insert_id(u_agent, ip, build):
 	import hashlib
 	hash = hashlib.sha224(u_agent + ip).hexdigest()
-	id = models.Id(hash=hash, build=build)
-	check = models.Id.query.filter_by(hash=hash).first()
+	check = models.Id.query.filter_by(hash=hash, build=build).first()
 	
-	if not check == None:
+	if check:
 		print 'Duplicate ID: None'
 		return False	
 
 	try:
 		print 'Insert ID' 
+		id = models.Id(hash=hash, build=build)
 		db.session.add(id)
 		db.session.commit()
 		return True
@@ -99,8 +99,8 @@ def insert_id(u_agent, ip, build):
 		return False
 	
 	except InvalidRequestError:
-		print 'InvalidRequestError: Duplicate ID'
-		return Flase
+		print 'InvalidRequestError'
+		return False
 
 def get_build(name):
 	build = models.Build.query.filter_by(name=name).first()
@@ -131,13 +131,11 @@ def get_abilityname_by_id(id):
 	return ability_name
 
 def get_heroes_by_role(role):
-	print 'Rolle: ', role
 	roles = models.Hero.query.filter_by(role=role).all()
 	names = []
 	for role in roles:
-		names.append(role.name)
-	names = names.sort()
-	print 'Heldennamen: ', names
+		names.append(str(role.name))
+	names.sort()
 	return names
 
 def get_builds_by_hero_name(name):

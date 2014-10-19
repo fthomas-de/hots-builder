@@ -39,8 +39,8 @@ class Build(db.Model):
 class Id(db.Model):
 	__tablename__ = 'id'
 	id = db.Column(db.Integer, primary_key = True)
-	hash = db.Column(db.String(56), unique = True)
+	hash = db.Column(db.String(56))
 	build = db.Column(db.String(56))
 	
 	def __repr__(self):
-		return '<ID>'
+		return '<ID %s>' % (self.build)
