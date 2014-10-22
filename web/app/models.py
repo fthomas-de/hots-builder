@@ -32,6 +32,7 @@ class Build(db.Model):
 	pos_votes = db.Column(db.Integer)
 	build = db.Column(db.String(75))
 	date = db.Column(db.String(21))
+	seconds = db.Column(db.String(20))
 
 	def __repr__(self):
 		return '<Build %s>' % (self.name)

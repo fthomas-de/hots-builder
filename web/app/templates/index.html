@@ -13,7 +13,7 @@
  </div>
 
 
-	{% if builds == None %}
+	{% if pgr == None %}
 		<h3>There are currently no Builds available</h3>
 		{% if not mode == 2 %}
 			<p>Click <a href="/create"><u>here</u></a> to create one</p>
@@ -21,28 +21,69 @@
 			<p>Click <a href="/{{ hero_name }}"><u>here</u></a> to create one</p>
 		{% endif %}
 	{% else %}
-		<ul class="pager">
-			<li class="previous disabled"><a href="#">Next</a></li>
-			<li class="next disabled"><a href="#">Previous</a></li>
+	
+	{% if mode == 0 %}
+		<ul class="pager">	
+			{% if pgr.has_next() %}
+				<li class="next"><a href="{{ '/page/' + n_page }}">Next</a></li>
+			{% else %}
+				<li class="next disabled"><a href="#">Next</a></li>
+			{% endif %}
+	
+			{% if pgr.has_prev() %}
+				<li class="previous"><a href="{{ '/page/' + p_page }}">Previous</a></li>
+			{% else %}
+				<li class="previous disabled"><a href="#">Previous</a></li>
+			{% endif %}
 		</ul>
+	{% elif mode == 1 %}
+		<ul class="pager">
+                        {% if pgr.has_next() %}
+                                <li class="next"><a href="{{ '/best/' + n_page }}">Next</a></li>
+                        {% else %}
+                                <li class="next disabled"><a href="#">Next</a></li>
+                        {% endif %}
 
+                        {% if pgr.has_prev() %}
+                                <li class="previous"><a href="{{ '/best/' + p_page }}">Previous</a></li>
+                        {% else %}
+                                <li class="previous disabled"><a href="#">Previous</a></li>
+                        {% endif %}
+                </ul>
+	{% elif mode == 2%}
+		<ul class="pager">
+                        {% if pgr.has_next() %}
+                                <li class="next"><a href="{{ '/builds/' + hero_name + n_page }}">Next</a></li>
+                        {% else %}
+                                <li class="next disabled"><a href="#">Next</a></li>
+                        {% endif %}
+
+                        {% if pgr.has_prev() %}
+                                <li class="previous"><a href="{{ '/builds/' + hero_name + p_page }}">Previous</a></li>
+                        {% else %}
+                                <li class="previous disabled"><a href="#">Previous</a></li>
+                        {% endif %}
+                </ul>
+	{% endif %}
 		
 		<div class="row">
-		{% for (build, abilities) in builds %}
+		{% if not pgr.get_build() == None %}
+		{% for build in pgr.get_build() %}
 			<div class="col-sm-3 col-sm-offset-2">
-
-			<a href="{{ '/' + build.build + '_' + build.name }}">{{ build.name }}</a>
-			<a href="{{ build.hero }}"><img src="{{ url_for('static', filename='img/heroes/' + build.hero + '_frame.png') }}" width="50px" /></a>
-			<span class="label label-success">{{ build.pos_votes }} likes</span><br>
+			
+			<a href="{{ '/' + build[0].build + '_' + build[0].name }}">{{ build[0].name }}</a>
+			<a href="{{ build[0].hero }}"><img src="{{ url_for('static', filename='img/heroes/' + build[0].hero + '_frame.png') }}" width="50px" /></a>
+			<span class="label label-success">{{ build[0].pos_votes }} likes</span><br>
 		
-			posted at {{ build.date }} <br><br>
+			posted at {{ build[0].date }} <br><br>
 			<ul class="list-group">
-				{% for ability in abilities %}
+				{% for ability in build[1] %}
 					<li class="list-group-item">{{ ability }}</li>
 				{% endfor %}
 			</ul>	
 			</div>
 		{% endfor %}
+		{% endif %}
 		</div>
 	{% endif %}
 

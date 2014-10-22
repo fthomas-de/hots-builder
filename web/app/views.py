@@ -28,6 +28,44 @@ with open('/home/fthomas/Dokumente/hots-builder/web/app/static/hero-data/weekly-
 		filepath = row.strip()
 		weekly_hero_lst.append(filepath)
 
+PER_PAGE = 2
+
+class Pager:
+	def __init__(self, page, builds, PER_PAGE, count):
+		self.page = page
+		self.builds = builds
+		self.per_page = PER_PAGE
+		self.count = count
+		self.current_page = 1
+		self.length = len(builds)/2
+		
+	def has_next(self):
+		if self.count > self.page * 2:
+			return True
+		else:
+			return False
+	
+	def has_prev(self):
+		if self.page == 1:
+			return False
+		else:
+			return True
+
+	def get_next(self):
+		pass
+
+	def get_prev(self):
+		pass
+
+	def get_build(self):
+		result = [] 
+		try:
+			result.append(self.builds[(self.page * 2) - 2])
+			if (self.page * 2) - 1 < self.count:
+				result.append(self.builds[(self.page * 2) - 1])	
+			return result
+		except IndexError:
+			return None
 
 #helper
 def chunks(lst):
@@ -40,16 +78,22 @@ def get_id():
 	return u_agent, ip
 
 #routing
+@app.route('/page/<p>')
 @app.route('/')
 @app.route('/hots')
 @app.route('/hots/builder')
-def index():
+def index(p=1):
+	p = int(p)
 	from dbupdate import get_latest_builds, get_abilityname_by_id
-	builds = get_latest_builds(2)
-	abilities = []
+	builds = get_latest_builds('all')
 
-	if len(builds) == 0:
+	abilities = []
+	count = len(builds)	
+	pager = None
+
+	if count == 0:
 		builds = None
+
 	else:
 		for build in builds:
 			ability = []
@@ -60,23 +104,31 @@ def index():
 			abilities.append(ability)
 
 		builds = zip(builds, abilities)
+		pager = Pager(p, builds, PER_PAGE, count)
 
 	return render_template('index.html', 
 				page='index', 
-				builds=builds,
 				assassins=assassins,
 				warriors=warriors,
 				supports=supports,
 				specialists=specialists, 
-				mode=0)
+				mode=0,
+				pgr=pager,
+				count=count,
+				n_page=str(p+1),
+				p_page=str(p-1))
 
 @app.route('/best')
-def best():
+@app.route('/best/<p>')
+def best(p=1):
+	p = int(p)
 	from dbupdate import get_best_builds, get_abilityname_by_id
-	builds = get_best_builds(2)
-	abilities = []
+	builds = get_best_builds('all')
+	abilities = []	
+	count = len(builds)
+	pager = None
 
-	if len(builds) == 0:
+	if count == 0:
 		builds = None
 	else:
 		for build in builds:
@@ -88,7 +140,10 @@ def best():
 			abilities.append(ability)
 
 		builds = zip(builds, abilities)	
-			
+		pager = Pager(p, builds, PER_PAGE, count)
+	
+	print pager.get_build()
+					
 	return render_template('index.html', 
 				page='index', 
 				builds=builds,
@@ -96,15 +151,25 @@ def best():
                                 warriors=warriors,
                                 supports=supports,
                                 specialists=specialists, 
-				mode=1)
+				p_page=str(p-1),
+				n_page=str(p+1),
+				mode=1,
+				count=count,
+				pgr=pager)
 
 @app.route('/builds/<hero_name>')
 def builds(hero_name):
+	p = hero_name[-2:]
+	p = int(p)
+	hero_name = hero_name[:-2]
 	from dbupdate import get_builds_by_hero_name, get_abilityname_by_id
 	
 	builds = get_builds_by_hero_name(hero_name)
 	abilities = []
-	if len(builds) == 0:
+	count = len(builds)
+	pager = None
+
+	if count == 0:
 		builds = None
 	else:
 		for build in builds:
@@ -116,16 +181,31 @@ def builds(hero_name):
 			abilities.append(ability)
 
 		builds = zip(builds, abilities)
+		pager = Pager(p, builds, PER_PAGE, count)
+
+	if p < 9:
+		n_page = '0' + str(p + 1)
+	else:
+		n_page = str(p)
+
+	if p < 10:
+		p_page = '0' + str(p-1)
+	else:
+		n_page = str(p)	
 
 	return render_template('index.html', 
-							page='index',
-							builds=builds,
-							hero_name=hero_name,
-							assassins=assassins,
-							warriors=warriors,
-							supports=supports,
-							specialists=specialists,
-							mode=2)
+				page='index',
+				builds=builds,
+				hero_name=hero_name,
+				assassins=assassins,
+				warriors=warriors,
+				supports=supports,
+				specialists=specialists,
+				mode=2,
+				pgr=pager,
+				p_page=p_page,	
+				n_page=n_page,
+				count=count)
 
 @app.route('/upvote_best/<name>')
 def upvote_best(name):

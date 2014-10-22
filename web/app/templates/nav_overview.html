@@ -9,7 +9,7 @@
         <a tabindex="-1" href="#">Assassin</a>
         <ul class="dropdown-menu">
           {% for hero in assassins %}
-            <li><a tabindex="-1" href="/builds/{{ hero }}">{{ hero }}</a></li>
+            <li><a tabindex="-1" href="/builds/{{ hero + '01'}}">{{ hero }}</a></li>
           {% endfor %}
         </ul>
       </li>
@@ -18,7 +18,7 @@
         <a tabindex="-1" href="#">Warrior</a>
         <ul class="dropdown-menu">
           {% for hero in warriors %}
-            <li><a tabindex="-1" href="/builds/{{ hero }}">{{ hero }}</a></li>
+            <li><a tabindex="-1" href="/builds/{{ hero + '01'}}">{{ hero }}</a></li>
           {% endfor %}
         </ul>
       </li>
@@ -27,7 +27,7 @@
         <a tabindex="-1" href="#">Support</a>
         <ul class="dropdown-menu">
           {% for hero in supports %}
-            <li><a tabindex="-1" href="/builds/{{ hero }}">{{ hero }}</a></li>
+            <li><a tabindex="-1" href="/builds/{{ hero + '01'}}">{{ hero }}</a></li>
           {% endfor %}
         </ul>
       </li>
@@ -36,7 +36,7 @@
         <a tabindex="-1" href="#">Specialist</a>
         <ul class="dropdown-menu">
           {% for hero in specialists %}
-            <li><a tabindex="-1" href="/builds/{{ hero }}">{{ hero }}</a></li>
+            <li><a tabindex="-1" href="/builds/{{ hero + '01'}}">{{ hero }}</a></li>
           {% endfor %}
         </ul>
       </li>

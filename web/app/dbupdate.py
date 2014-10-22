@@ -45,9 +45,10 @@ def update():
 
 
 def insert_build(name, text, hero, build, votes=0, pos_votes=0):
-	from time import strftime
+	from time import strftime, time
 	date = strftime("%H:%M:%S - %d/%m/%Y")
-	build = models.Build(name=name, text=text, hero=hero, votes=votes, pos_votes=pos_votes, build=build, date=date)
+	seconds=time()
+	build = models.Build(name=name, text=text, hero=hero, votes=votes, pos_votes=pos_votes, build=build, date=date, seconds=seconds)
 
 	if len(name) < 4 or len(name) > 13:
 		print 'Wrong len()'
@@ -107,12 +108,16 @@ def get_build(name):
 	return build
 
 def get_best_builds(count):
-	builds = models.Build.query.order_by(models.Build.pos_votes.desc()).limit(count)
+	builds = models.Build.query.order_by(models.Build.pos_votes.desc())
+	if not count == 'all':
+		builds.limit()
 	builds = builds.all()
 	return builds
 
 def get_latest_builds(count):
-	builds = models.Build.query.order_by(models.Build.date.desc()).limit(count)
+	builds = models.Build.query.order_by(models.Build.seconds.desc())
+	if not count == 'all':
+		builds.limit(count)
 	builds = builds.all()
 	return builds
 
@@ -140,7 +145,7 @@ def get_heroes_by_role(role):
 
 def get_builds_by_hero_name(name):
 	builds = []
-	result = models.Build.query.filter_by(hero=name).limit(2).all()
+	result = models.Build.query.filter_by(hero=name).order_by(models.Build.seconds.desc()).all()
 	for item in result:
 		builds.append(item)
 	return builds
