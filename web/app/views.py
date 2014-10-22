@@ -182,7 +182,7 @@ def builds(hero_name):
 
 		builds = zip(builds, abilities)
 		pager = Pager(p, builds, PER_PAGE, count)
-
+		if pager.get_build() == None: abort(401)
 	if p < 9:
 		n_page = '0' + str(p + 1)
 	else:
