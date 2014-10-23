@@ -51,13 +51,13 @@ def insert_build(name, text, hero, build, votes=0, pos_votes=0):
 	build = models.Build(name=name, text=text, hero=hero, votes=votes, pos_votes=pos_votes, build=build, date=date, seconds=seconds)
 
 	if len(name) < 4 or len(name) > 13:
-		print 'Wrong len()'
+		#print 'Wrong len()'
 		return False
 
 	import re
-	print str(name)
+	#print str(name)
 	if not re.match(r'[\w-]*$', name):
-		print 'invalid characters'
+		#print 'invalid characters'
 		return False
 
 	try:
@@ -66,7 +66,7 @@ def insert_build(name, text, hero, build, votes=0, pos_votes=0):
 		return True
 
 	except IntegrityError:
-		print 'IntegrityError: Duplicate name'	
+		#print 'IntegrityError: Duplicate name'	
 		return False
 
 def insert_hero(name, role):
@@ -85,22 +85,22 @@ def insert_id(u_agent, ip, build):
 	check = models.Id.query.filter_by(hash=hash, build=build).first()
 	
 	if check:
-		print 'Duplicate ID: None'
+		#print 'Duplicate ID: None'
 		return False	
 
 	try:
-		print 'Insert ID' 
+		#print 'Insert ID' 
 		id = models.Id(hash=hash, build=build)
 		db.session.add(id)
 		db.session.commit()
 		return True
 
 	except IntegrityError:
-		print 'IntegrityError: Duplicate ID'
+		#print 'IntegrityError: Duplicate ID'
 		return False
 	
 	except InvalidRequestError:
-		print 'InvalidRequestError'
+		#print 'InvalidRequestError'
 		return False
 
 def get_build(name):
@@ -159,7 +159,7 @@ def update_ability(name, text, lvl, hero_id):
 	ability = models.Ability.query.filter_by(name=name, lvl=lvl, hero_id=hero_id).first()
 
 	if ability == None:
-		print 'Inserting:', name, lvl, hero_id
+		#print 'Inserting:', name, lvl, hero_id
 		insert_ability(name, text, lvl, hero_id)
 	else:
 		ability.text = text

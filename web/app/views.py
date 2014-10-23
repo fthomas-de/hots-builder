@@ -105,7 +105,8 @@ def index(p=1):
 
 		builds = zip(builds, abilities)
 		pager = Pager(p, builds, PER_PAGE, count)
-
+		if pager.get_build() == None: abort(401)
+		
 	return render_template('index.html', 
 				page='index', 
 				assassins=assassins,
@@ -141,9 +142,8 @@ def best(p=1):
 
 		builds = zip(builds, abilities)	
 		pager = Pager(p, builds, PER_PAGE, count)
+		if pager.get_build() == None: abort(401)
 	
-	print pager.get_build()
-					
 	return render_template('index.html', 
 				page='index', 
 				builds=builds,
@@ -162,6 +162,7 @@ def builds(hero_name):
 	p = hero_name[-2:]
 	p = int(p)
 	hero_name = hero_name[:-2]
+	if not hero_name + '_frame.png' in hero_img_names: abort(401) 
 	from dbupdate import get_builds_by_hero_name, get_abilityname_by_id
 	
 	builds = get_builds_by_hero_name(hero_name)
@@ -191,7 +192,10 @@ def builds(hero_name):
 	if p < 10:
 		p_page = '0' + str(p-1)
 	else:
-		n_page = str(p)	
+		p_page = str(p)	
+
+	
+	if len(n_page) > 2 or len(p_page) > 2: abort(401)
 
 	return render_template('index.html', 
 				page='index',
@@ -261,7 +265,6 @@ def submit(var):
 	from .forms import Build
 	form = Build()
 	name = form.build_name.data
-	print var
 
 	if name == "":
 		return redirect('/' + var, code=302)
@@ -276,7 +279,7 @@ def submit(var):
 
 @app.route('/<name>')
 def build(name):
-	print str(name)
+	#print str(name)
 	build = name
 	build_name = ""
 
@@ -289,7 +292,7 @@ def build(name):
 		mode = 3
 	else:
 		#case 0: first call
-		print 'Exception: Resetting'
+		#print 'Exception: Resetting'
 		hist = ''
 		lvl = 1
 		build_name = ""
