@@ -164,3 +164,14 @@ def update_ability(name, text, lvl, hero_id):
 	else:
 		ability.text = text
 		db.session.commit()
+
+def build_exists(build_name, build):
+	b = models.Build.query.filter_by(name=build_name).first()
+	if b == None: 
+		return False
+	else:
+		_, _, build_tmp =  b.build.split('_')
+		if not build == build_tmp:
+			return False
+		else:
+			return True

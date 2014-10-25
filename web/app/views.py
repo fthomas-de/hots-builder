@@ -295,11 +295,12 @@ def build(name):
 		#print 'Exception: Resetting'
 		hist = ''
 		lvl = 1
-		build_name = ""
+		build_name = ''
 		mode = 2
 	lvl = int(lvl)
 
-	
+	from dbupdate import build_exists
+	if not build_name == '' and not build_exists(build_name, hist): abort(401)	
 	if not name + '_frame.png' in hero_img_names: abort(401)
 	
 	#case 1: rdy now
